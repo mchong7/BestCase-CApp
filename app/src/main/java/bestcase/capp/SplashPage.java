@@ -8,22 +8,22 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class SplashPage extends Splash{
+public class SplashPage extends DataInput{
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.splash);
 
         Thread timerThread = new Thread(){
-            public void run(){
-                try{
+            public void run() {
+                try {
                     sleep(3000);
-                }catch(InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally{
-                    Intent intent = new Intent(SplashPage.this,Splash.class);
+                } finally {
+                    Intent intent = new Intent(SplashPage.this, DataInput.class);
                     startActivity(intent);
                 }
             }
