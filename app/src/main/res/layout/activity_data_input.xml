@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/velocity_fin"
+        android:id="@+id/final_vel"
         android:layout_below="@+id/initial_vel"
         android:layout_alignEnd="@+id/initial_vel"
         android:editable="true"
