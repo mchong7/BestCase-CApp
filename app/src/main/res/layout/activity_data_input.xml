@@ -48,8 +48,8 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/accel"
-        android:layout_below="@+id/velocity_fin"
-        android:layout_alignEnd="@+id/velocity_fin"
+        android:layout_below="@+id/final_vel"
+        android:layout_alignEnd="@+id/final_vel"
         android:editable="true"
         android:hint="Acceleration" />
 
