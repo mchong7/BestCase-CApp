@@ -10,6 +10,11 @@ import java.io.*;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.app.Dialog;
+import android.app.AlertDialog;
+import java.lang.Object;
+import android.content.Context;
+import android.content.*;
 
 public class DataInput extends AppCompatActivity {
 
@@ -48,6 +53,8 @@ public class DataInput extends AppCompatActivity {
                 double accel;
                 double time;
                 double disp;
+
+
 
                 // initialize variables to what was input in text boxes
                 if(isEmpty(text_initial_vel)) {
@@ -379,7 +386,17 @@ public class DataInput extends AppCompatActivity {
                 }
                 // output an error if one occurs
                 else {
-                    System.out.println("\nError: " + error);
+                    //System.out.println("\nError: " + error);
+                    AlertDialog error_alert = new AlertDialog.Builder(DataInput.this).create();
+                    error_alert.setTitle("Error");
+                    error_alert.setMessage(error);
+                    error_alert.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    error_alert.show();
+
                 }
 
             }
