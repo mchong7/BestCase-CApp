@@ -76,9 +76,9 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/dist"
+        android:id="@+id/disp"
         android:layout_below="@+id/time"
         android:layout_alignParentStart="true"
-        android:hint="Distance" />
+        android:hint="Displacement" />
 
 </RelativeLayout>
