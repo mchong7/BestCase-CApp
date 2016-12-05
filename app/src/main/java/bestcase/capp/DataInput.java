@@ -56,47 +56,69 @@ public class DataInput extends AppCompatActivity {
 
 
 
-                // initialize variables to what was input in text boxes
+                // initialize variables to what the input was in the text boxes
                 if(isEmpty(text_initial_vel))
-                {
-                    initial_vel = Double.parseDouble(text_initial_vel.getText().toString());
-                }
-                else
                 {
                     initial_vel = Double.NaN;
                 }
-                if(isEmpty(text_final_vel))
-                {
-                    final_vel = Double.parseDouble(text_final_vel.getText().toString());
-                }
                 else
+                {
+                    try {
+                        initial_vel = Double.parseDouble(text_initial_vel.getText().toString());
+                    }catch(NumberFormatException e) {
+                        initial_vel = Double.NaN;
+                    }
+                }
+                if(isEmpty(text_final_vel))
                 {
                     final_vel = Double.NaN;
                 }
-                if(isEmpty(text_accel))
-                {
-                    accel = Double.parseDouble(text_accel.getText().toString());
-                }
                 else
+                {
+                    try {
+                        final_vel = Double.parseDouble(text_final_vel.getText().toString());
+                    } catch(NumberFormatException e) {
+                        final_vel = Double.NaN;
+                    }
+                }
+                if(isEmpty(text_accel))
                 {
                     accel = Double.NaN;
                 }
-                if(isEmpty(text_accel))
-                {
-                    time = Double.parseDouble(text_time.getText().toString());
-                }
                 else
+                {
+                    try {
+                        accel = Double.parseDouble(text_accel.getText().toString());
+                    } catch(NumberFormatException e){
+                        accel = Double.NaN;
+                    }
+                }
+                if(isEmpty(text_time))
                 {
                     time = Double.NaN;
                 }
-                if(isEmpty(text_disp))
-                {
-                    disp = Double.parseDouble(text_disp.getText().toString());
-                }
                 else
+                {
+                    try {
+                        time = Double.parseDouble(text_time.getText().toString());
+                    }catch(NumberFormatException e){
+                        time = Double.NaN;
+                    }
+                }
+                if(isEmpty(text_disp))
                 {
                     disp = Double.NaN;
                 }
+                else
+                {
+                    try {
+                        disp = Double.parseDouble(text_disp.getText().toString());
+                    }catch(NumberFormatException e){
+                        disp = Double.NaN;
+                    }
+                }
+
+
 
                 // BEGIN BINDER ALGORITHM
                 // method implementation
