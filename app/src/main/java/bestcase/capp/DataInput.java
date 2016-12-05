@@ -379,7 +379,7 @@ public class DataInput extends AppCompatActivity {
                 // output all the variables
                 // popup messages would be ideal
                 if (error == "") {
-                    System.out.println("\nInitial Velocity: " + v0 + " m/s.");
+                    System.out.println("Initial Velocity: " + v0 + " m/s.");
                     System.out.println("Velocity: " + vel + " m/s.");
                     System.out.println("Acceleration: " + a + " m/s^2.");
                     System.out.println("Time: " + dt + " seconds.");
