@@ -57,7 +57,8 @@ public class DataInput extends AppCompatActivity {
 
 
                 // initialize variables to what was input in text boxes
-                if(isEmpty(text_initial_vel)) {
+                if(isEmpty(text_initial_vel))
+                {
                     initial_vel = Double.parseDouble(text_initial_vel.getText().toString());
                 }
                 else
@@ -101,12 +102,12 @@ public class DataInput extends AppCompatActivity {
                 // method implementation
                 // variable declaration
                 int Case = 0;
-                double a = 0.0, vel = 0.0, v2, v0 = 0.0, v02, dt = 0.0, dt2, dx = 0.0;
+                double a = 0.0, vel = 0.0, vel2, v0 = 0.0, v02, dt = 0.0, dt2, dx = 0.0;
                 String error;
 
                 // figure out the unknown variables
 
-                // checks if velocity and time are the unknown variables
+                // checks if final velocity and time are the unknown variables
                 if ((final_vel == Double.NaN) && (time == Double.NaN)) {
                     v0 = initial_vel;
                     a = accel;
@@ -141,7 +142,7 @@ public class DataInput extends AppCompatActivity {
                     dt = time;
                     Case = 5;
                 }
-                // checks if velocity and displacement are the unknown variables
+                // checks if final velocity and displacement are the unknown variables
                 else if ((final_vel == Double.NaN) && (disp == Double.NaN)) {
                     v0 = initial_vel;
                     a = accel;
@@ -155,14 +156,14 @@ public class DataInput extends AppCompatActivity {
                     dt = time;
                     Case = 7;
                 }
-                // checks if acceleration and velocity are the unknown variables
+                // checks if acceleration and final velocity are the unknown variables
                 else if ((accel == Double.NaN) && (final_vel == Double.NaN)) {
                     v0 = initial_vel;
                     dt = time;
                     dx = disp;
                     Case = 8;
                 }
-                // checks if initial velocity and velocity are the unknown variables
+                // checks if initial velocity and final velocity are the unknown variables
                 else if ((initial_vel == Double.NaN) && (final_vel == Double.NaN)) {
                     a = accel;
                     dt = time;
@@ -177,23 +178,23 @@ public class DataInput extends AppCompatActivity {
                     Case = 10;
                 }
 
-                // Case 1: solve for velocity and time
+                // Case 1: solve for final velocity and time
                 // velocity squared and time squared are also solved
                 if (Case == 1) {
                     error = "";
-                    if (accel == 0.0) {
+                    if (a == 0.0) {
                         vel = v0;
                         dt = dx / v0;
                     }
                     else {
                         if (v0*v0 + 2 * a*dx < 0) {
-                            error = "Velocity and time cannot be found because the product of initial velocity squared added by two and acceleration multiplied by displacement is less than zero.";
+                            error = "Final velocity and time cannot be found because the product of initial velocity squared added by two and acceleration multiplied by displacement is less than zero.";
                         }
                         else {
                             vel = sqrt(v0*v0 + 2 * a*dx);
-                            v2 = -(sqrt(v0*v0 + 2 * a*dx));
+                            vel2 = -(sqrt(v0*v0 + 2 * a*dx));
                             dt = (vel - v0) / a;
-                            dt2 = (v2 - v0) / a;
+                            dt2 = (vel2 - v0) / a;
                         }
                     }
                 }
@@ -209,7 +210,7 @@ public class DataInput extends AppCompatActivity {
                             dt = 0.0;
                         }
                         else if ((vel == 0.0) && (dx != 0.0)) {
-                            error = "Initial velocity and time cannot be found if velocity is equal to zero and displacement is a nonzero number.";
+                            error = "Initial velocity and time cannot be found if final velocity is equal to zero and displacement is a nonzero number.";
                         }
                         else {
                             v0 = vel;
@@ -218,7 +219,7 @@ public class DataInput extends AppCompatActivity {
                     }
                     else {
                         if (vel*vel - 2 * a*dx < 0) {
-                            error = "Iniital velocity and time cannot be found because the product of velocity squared subtracted by two and acceleration multiplied by displacement is less than zero.";
+                            error = "Initial velocity and time cannot be found because the product of final velocity squared subtracted by two and acceleration multiplied by displacement is less than zero.";
                         }
                         else {
                             v0 = sqrt(vel*vel - 2 * a*dx);
@@ -237,10 +238,10 @@ public class DataInput extends AppCompatActivity {
                         if (vel == v0) {
                             a = 0.0; // a can be anything
                             dt = 0.0;
-                            error = "Acceleration and time cannot be found if velocity is equal to initial velocity and displacement is equal to zero.";
+                            error = "Acceleration and time cannot be found if final velocity is equal to initial velocity and displacement is equal to zero.";
                         }
                         else if (v0 == -vel) {
-                            error = "Acceleration and time cannot be found if initial velocity is equal to negative velocity and displacement is equal to zero.";
+                            error = "Acceleration and time cannot be found if initial velocity is equal to negative final velocity and displacement is equal to zero.";
                         }
                         else {
                             error = "Acceleration and time cannot be found using the given input.";
@@ -263,7 +264,7 @@ public class DataInput extends AppCompatActivity {
                     error = "";
                     if (a == 0) {
                         if (vel != v0) {
-                            error = "Displacement and time cannot be found if acceleration is equal to zero and velocity is not equal to initial velocity.";
+                            error = "Displacement and time cannot be found if acceleration is equal to zero and final velocity is not equal to initial velocity.";
                         }
                         else {
                             error = "Displacement and time cannot be found using the given input.";
@@ -283,7 +284,7 @@ public class DataInput extends AppCompatActivity {
                         if (vel == v0) {
                             dx = 0.0;
                             a = 0.0;  // any a works
-                            error = "Acceleration and displacement cannot be found if velocity is equal to initial velocity and time is equal to zero.";
+                            error = "Acceleration and displacement cannot be found if final velocity is equal to initial velocity and time is equal to zero.";
                         }
                         else {
                             error = "Displacement and acceleration cannot be found using the given input.";
@@ -296,7 +297,7 @@ public class DataInput extends AppCompatActivity {
                 }
                 // end of code segment for case 5
 
-                // Case 6: solve for velocity and displacement
+                // Case 6: solve for final velocity and displacement
                 else if (Case == 6) {
                     error = "";
                     vel = v0 + a*dt;
@@ -312,14 +313,14 @@ public class DataInput extends AppCompatActivity {
                 }
                 // end of code segment for case 7
 
-                // Case 8: solve for acceleration and velocity
+                // Case 8: solve for acceleration and final velocity
                 else if (Case == 8) {
                     error = "";
                     if (dt == 0.0) {
                         if (dx == 0.0) {
                             a = 0.0;  // a can be anything
                             vel = v0;
-                            error = "Velocity and initial velocity cannot be found if time and displacement are equal to zero.";
+                            error = "Final velocity and acceleration cannot be found if time and displacement are equal to zero.";
                         }
                         else {
                             error = "Acceleration and velocity cannot be found using the given input.";
@@ -332,15 +333,15 @@ public class DataInput extends AppCompatActivity {
                 }
                 // end of code segment for case 8
 
-                // Case 9: solve for initial velocity and velocity
+                // Case 9: solve for initial velocity and final velocity
                 else if (Case == 9) {
                     error = "";
                     if (dt == 0.0) {
                         if (dx == 0.0) {
-                            error = "Velocity and initial velocity cannot be found if time and displacement are equal to zero.";
+                            error = "Initial velocity and final velocity cannot be found if time and displacement are equal to zero.";
                         }
                         else {
-                            error = "Velocity and initial velocity cannot be found using the given input.";
+                            error = "Initial velocity and final velocity cannot be found using the given input.";
                         }
                     }
                     else {
@@ -379,7 +380,7 @@ public class DataInput extends AppCompatActivity {
                 // popup messages would be ideal
                 if (error == "") {
                     System.out.println("\nInitial Velocity: " + v0 + " m/s.");
-                    System.out.println("Velocity: " + v + " m/s.");
+                    System.out.println("Velocity: " + vel + " m/s.");
                     System.out.println("Acceleration: " + a + " m/s^2.");
                     System.out.println("Time: " + dt + " seconds.");
                     System.out.println("Displacement: " + dx + " meters.");

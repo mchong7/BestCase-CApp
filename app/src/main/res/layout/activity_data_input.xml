@@ -22,7 +22,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:ems="10"
         android:id="@+id/initial_vel"
         android:layout_marginTop="54dp"
@@ -34,7 +34,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:ems="10"
         android:id="@+id/final_vel"
         android:layout_below="@+id/initial_vel"
@@ -45,21 +45,13 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:ems="10"
         android:id="@+id/accel"
         android:layout_below="@+id/final_vel"
         android:layout_alignEnd="@+id/final_vel"
         android:editable="true"
         android:hint="Acceleration" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Solve"
-        android:id="@+id/solve_button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -74,11 +66,19 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:ems="10"
         android:id="@+id/disp"
         android:layout_below="@+id/time"
         android:layout_alignParentStart="true"
         android:hint="Displacement" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Solve"
+        android:id="@+id/solve_button"
+        android:layout_below="@+id/disp"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
