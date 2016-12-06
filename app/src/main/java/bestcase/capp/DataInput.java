@@ -469,7 +469,21 @@ public class DataInput extends AppCompatActivity {
 
                      // output all the variables
                      // popup messages would be ideal
+
                      if (error == "") {
+                         AlertDialog alertDialog = new AlertDialog.Builder(DataInput.this).create();
+                         String output1 = "Initial Velocity: " + v0 + " m/s.";
+                         String output2 = "Velocity: " + vel + " m/s.";
+                         String output3 = "Acceleration: " + a + " m/s^2.";
+                         String output4 = "Time: " + dt + " seconds.";
+                         String output5 = "Displacement: " + dx + " meters.";
+                         alertDialog.setMessage(output1 +"\n"+ output2 +"\n"+ output3 + "\n" + output4 + "\n" + output5);
+                         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                             public void onClick(DialogInterface dialog, int which) {
+                                 dialog.dismiss();
+                             }
+                         });
+                         alertDialog.show();
                          System.out.print("Initial Velocity: " + v0 + " m/s.");
                          System.out.print("Velocity: " + vel + " m/s.");
                          System.out.print("Acceleration: " + a + " m/s^2.");
