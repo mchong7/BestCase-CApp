@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="356dp"
+        app:srcCompat="@drawable/bulb"
+        android:id="@+id/imageView"
+        android:adjustViewBounds="false" />
+
+    <TextView
+        android:text="Constant Acceleration Application"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Title"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/white"
+        android:layout_weight="0.10" />
+</LinearLayout>

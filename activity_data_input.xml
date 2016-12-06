@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="bestcase.capp.DataInput">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/initial_vel"
+        android:editable="true"
+        android:hint="Initial Velocity (m/s)"
+        android:textSize="30sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textColorHint="@android:color/background_light"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_above="@+id/final_vel"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="23dp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Input values:"
+        android:id="@+id/Title"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="normal|bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/time"
+        android:hint="Time (s)"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_blue_bright"
+        android:textColorHint="@android:color/white"
+        android:layout_marginBottom="17dp"
+        android:layout_above="@+id/disp"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/disp"
+        android:hint="Displacement (m)"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_marginBottom="36dp"
+        android:layout_above="@+id/solve_button"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Solve"
+        android:id="@+id/solve_button"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_marginBottom="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/accel"
+        android:editable="true"
+        android:hint="Acceleration (m/s^2)"
+        android:textStyle="normal|bold"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:textColorHint="@android:color/white"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_above="@+id/time"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="27dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/final_vel"
+        android:editable="true"
+        android:hint="Final Velocity (m/s)"
+        android:textSize="30sp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_blue_bright"
+        android:textColorHint="@android:color/white"
+        android:textAlignment="center"
+        android:layout_marginBottom="26dp"
+        android:layout_above="@+id/accel"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
