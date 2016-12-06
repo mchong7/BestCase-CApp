@@ -198,7 +198,7 @@ public class DataInput extends AppCompatActivity {
                              Case = 1;
                          }
                          // checks if initial velocity and time are the unknown variables
-                         else if (initial_velocity == "" && Time == "") {
+                         else if (final_velocity == "" && Time == "") {
                              vel = final_vel;
                              a = accel;
                              dx = disp;
@@ -271,7 +271,8 @@ public class DataInput extends AppCompatActivity {
                              }
                              else {
                                  if (v0*v0 + 2 * a*dx < 0.0) {
-                                     error = "Final velocity and time cannot be found because the product of initial velocity squared added by two and acceleration multiplied by displacement is less than zero and acceleration is nonzero.";
+                                     error = "Final velocity and time cannot be found because the product of initial velocity squared added by two " +
+                                             "and acceleration multiplied by displacement is less than zero and acceleration is nonzero.";
                                  }
                                  else {
                                      vel = sqrt(v0*v0 + 2 * a*dx);
@@ -294,7 +295,8 @@ public class DataInput extends AppCompatActivity {
                                      dt = 0.0;
                                  }
                                  else if ((vel == 0.0) && (dx != 0.0)) {
-                                     error = "Initial velocity and time cannot be found if final velocity and acceleration is equal to zero and displacement is a nonzero number.";
+                                     error = "Initial velocity and time cannot be found if final velocity and acceleration is equal to zero " +
+                                             "and displacement is a nonzero number.";
                                  }
                                  else {
                                      v0 = vel;
@@ -303,7 +305,8 @@ public class DataInput extends AppCompatActivity {
                              }
                              else {
                                  if (vel*vel - 2 * a*dx < 0.0) {
-                                     error = "Initial velocity and time cannot be found because the product of final velocity squared subtracted by two and acceleration multiplied by displacement is less than zero and acceleration is nonzero.";
+                                     error = "Initial velocity and time cannot be found because the product of final velocity " +
+                                             "squared subtracted by two and acceleration multiplied by displacement is less than zero and acceleration is nonzero.";
                                  }
                                  else {
                                      v0 = sqrt(vel*vel - 2 * a*dx);
