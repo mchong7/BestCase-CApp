@@ -5,17 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.lang.String;
 import java.lang.Double;
-import static java.lang.Math.sqrt;
-import java.io.*;
-
+import static java.lang.Math.*;
+// import java.io.*;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.app.Dialog;
+// import android.app.Dialog;
 import android.app.AlertDialog;
-import java.lang.Object;
+// import java.lang.Object;
 import android.text.TextUtils;
-import android.content.Context;
+// import android.content.Context;
 import android.content.*;
 
 public class DataInput extends AppCompatActivity {
@@ -59,7 +58,7 @@ public class DataInput extends AppCompatActivity {
                  String error;
 
                  // initialize variables to what the input was in the text boxes
-                 //Check to make sure that no less than three values are input
+                 // Check to make sure that no less than three values are input
                  if ((isEmpty(text_initial_vel) && isEmpty(text_final_vel) && isEmpty(text_accel) && isEmpty(text_time) && isEmpty(text_disp)) ||
                          (isEmpty(text_final_vel) && isEmpty(text_accel) && isEmpty(text_time) && isEmpty(text_disp)) ||
                          (isEmpty(text_initial_vel) && isEmpty(text_accel) && isEmpty(text_time) && isEmpty(text_disp)) ||
@@ -280,10 +279,9 @@ public class DataInput extends AppCompatActivity {
                      twoUnknowns = true;
                  }
 
-                 // BEGIN BINDER ALGORITHM
-                 // variable declaration for algorithm
+                 // variable declaration for Binder's algorithm
                  int Case = 0;
-                 double a = 0.0, vel = 0.0, vel2, v0 = 0.0, v02, dt = 0.0, dt2, dx = 0.0;
+                 double a = 0.0, vel = 0.0, vel2 = 0.0, v0 = 0.0, v02 = 0.0, dt = 0.0, dt2 = 0.0, dx = 0.0;
 
                  // check to see how much unknown variables are being solved
                  if (twoUnknowns)
@@ -361,6 +359,8 @@ public class DataInput extends AppCompatActivity {
                          Case = 10;
                      }
 
+                     // BEGIN BINDER ALGORITHM
+
                      // Case 1: solve for final velocity and time
                      // Final velocity squared and time squared are also solved
                      if (Case == 1) {
@@ -370,12 +370,12 @@ public class DataInput extends AppCompatActivity {
                              dt = dx / v0;
                          }
                          else {
-                             if (v0*v0 + 2 * a*dx < 0) {
+                             if (v0 * v0 + 2 * a * dx < 0) {
                                  error = "Final velocity and time cannot be found because the product of initial velocity squared added by two and acceleration multiplied by displacement is less than zero.";
                              }
                              else {
-                                 vel = sqrt(v0*v0 + 2 * a*dx);
-                                 vel2 = -(sqrt(v0*v0 + 2 * a*dx));
+                                 vel = sqrt(v0 * v0 + 2 * a * dx);
+                                 vel2 = -(sqrt(v0 * v0 + 2 * a * dx));
                                  dt = (vel - v0) / a;
                                  dt2 = (vel2 - v0) / a;
                              }
@@ -401,12 +401,12 @@ public class DataInput extends AppCompatActivity {
                              }
                          }
                          else {
-                             if (vel*vel - 2 * a*dx < 0) {
+                             if (vel * vel - 2 * a * dx < 0) {
                                  error = "Initial velocity and time cannot be found because the product of final velocity squared subtracted by two and acceleration multiplied by displacement is less than zero.";
                              }
                              else {
-                                 v0 = sqrt(vel*vel - 2 * a*dx);
-                                 v02 = -(sqrt(vel*vel - 2 * a*dx));
+                                 v0 = sqrt(vel * vel - 2 * a * dx);
+                                 v02 = -(sqrt(vel * vel - 2 * a * dx));
                                  dt = (vel - v0) / a;
                                  dt2 = (vel - v02) / a;
                              }
@@ -431,7 +431,7 @@ public class DataInput extends AppCompatActivity {
                              }
                          }
                          else {
-                             a = (vel*vel - v0*v0) / (2.0*dx);
+                             a = (vel * vel - v0 * v0) / (2.0 * dx);
                              if (a == 0.0) {
                                  dt = dx / v0;
                              }
@@ -454,7 +454,7 @@ public class DataInput extends AppCompatActivity {
                              }
                          }
                          else {
-                             dx = (vel*vel - v0*v0) / (2.0*a);
+                             dx = (vel * vel - v0 * v0) / (2.0 * a);
                              dt = (vel - v0) / a;
                          }
                      }
@@ -474,8 +474,8 @@ public class DataInput extends AppCompatActivity {
                              }
                          }
                          else {
-                             dx = v0*dt + 0.5*a*dt*dt;
                              a = (vel - v0) / dt;
+                             dx = v0 * dt + 0.5 * a * dt * dt;
                          }
                      }
                      // end of code segment for case 5
@@ -483,16 +483,16 @@ public class DataInput extends AppCompatActivity {
                      // Case 6: solve for final velocity and displacement
                      else if (Case == 6) {
                          error = "";
-                         vel = v0 + a*dt;
-                         dx = v0*dt + 0.5*a*dt*dt;
+                         vel = v0 + a * dt;
+                         dx = v0 * dt + 0.5 * a * dt * dt;
                      }
                      // end of code segment for case 6
 
                      // Case 7: solve for initial velocity and displacement
                      else if (Case == 7) {
                          error = "";
-                         v0 = vel - a*dt;
-                         dx = v0*dt + 0.5*a*dt*dt;
+                         v0 = vel - a * dt;
+                         dx = v0 * dt + 0.5 * a * dt * dt;
                      }
                      // end of code segment for case 7
 
@@ -510,8 +510,8 @@ public class DataInput extends AppCompatActivity {
                              }
                          }
                          else {
-                             a = 2 / (dt*dt)*(dx - v0*dt);
-                             vel = v0 + a*dt;
+                             a = 2 / (dt * dt) * (dx - v0 * dt);
+                             vel = v0 + a * dt;
                          }
                      }
                      // end of code segment for case 8
@@ -528,8 +528,8 @@ public class DataInput extends AppCompatActivity {
                              }
                          }
                          else {
-                             v0 = 1.0 / dt*(dx - 0.5*a*dt*dt);
-                             vel = v0 + a*dt;
+                             v0 = 1.0 / dt * (dx - 0.5 * a * dt * dt);
+                             vel = v0 + a * dt;
                          }
                      }
                      // end of code segment for case 9
@@ -548,8 +548,8 @@ public class DataInput extends AppCompatActivity {
                              }
                          }
                          else {
-                             a = 2.0 / (dt*dt)*(vel*dt - dx);
-                             v0 = vel - a*dt;
+                             a = 2.0 / (dt * dt) * (vel * dt - dx);
+                             v0 = vel - a * dt;
                          }
                      }
                      // end of code segment for case 10
@@ -558,6 +558,7 @@ public class DataInput extends AppCompatActivity {
                      else {
                          error = "Invalid case specified.";
                      }
+                     // END BINDER ALGORITHM
                  }
                  // this else condition is met if an invalid number of variables are trying to be solved
                  else
@@ -566,24 +567,38 @@ public class DataInput extends AppCompatActivity {
                  }
 
                  // output all the variables
-                 if (error == "") {
+                 if (error.equals("")) {
                      AlertDialog alertDialog = new AlertDialog.Builder(DataInput.this).create();
-                     String output1 = "Initial Velocity: " + v0 + " m/s.";
-                     String output2 = "Final Velocity: " + vel + " m/s.";
-                     String output3 = "Acceleration: " + a + " m/s^2.";
-                     String output4 = "Time: " + dt + " seconds.";
-                     String output5 = "Displacement: " + dx + " meters.";
+                     String v0Output = "Initial Velocity: " + v0 + " m/s.";
+                     String v02Output = "Second Initial Velocity: " + v02 + " m/s.";
+                     String velOutput = "Final Velocity: " + vel + " m/s.";
+                     String vel2Output = "Second Final Velocity: " + vel2 + " m/s.";
+                     String aOutput = "Acceleration: " + a + " m/s^2.";
+                     String dtOutput = "Time: " + dt + " seconds.";
+                     String dt2Output = "Second Time: " + dt2 + " seconds.";
+                     String dxOutput5 = "Displacement: " + dx + " meters.";
                      alertDialog.setTitle("Results");
-                     alertDialog.setMessage(output1 +"\n\n"+ output2 +"\n\n"+ output3 + "\n\n" + output4 + "\n\n" + output5);
+                     if (Case == 1)
+                     {
+                         alertDialog.setMessage(v0Output + "\n\n" + velOutput + "\n\n" + vel2Output + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dt2Output + "\n\n" + dxOutput5);
+                     }
+                     else if (Case == 2)
+                     {
+                         alertDialog.setMessage(v0Output + "\n\n" + v02Output + "\n\n" + velOutput + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dt2Output + "\n\n" + dxOutput5);
+                     }
+                     else
+                     {
+                         alertDialog.setMessage(v0Output + "\n\n" + velOutput + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dxOutput5);
+                     }
                      alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
                          public void onClick(DialogInterface dialog, int which) {
                              dialog.dismiss();
                          }
                      });
                      alertDialog.show();
-                     Button buttonbackground1 = alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL);
-                     buttonbackground1.setBackgroundColor(Color.LTGRAY);
-                     buttonbackground1.setTextColor(Color.BLUE);
+                     Button validInputButton = alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL);
+                     validInputButton.setBackgroundColor(Color.LTGRAY);
+                     validInputButton.setTextColor(Color.BLUE);
                  }
                  // output an error if one occurs
                  else {
@@ -596,14 +611,11 @@ public class DataInput extends AppCompatActivity {
                          }
                      });
                      error_alert.show();
-                     Button buttonbackground2 = error_alert.getButton(AlertDialog.BUTTON_NEUTRAL);
-                     buttonbackground2.setBackgroundColor(Color.LTGRAY);
-                     buttonbackground2.setTextColor(Color.RED);
+                     Button errorButton = error_alert.getButton(AlertDialog.BUTTON_NEUTRAL);
+                     errorButton.setBackgroundColor(Color.LTGRAY);
+                     errorButton.setTextColor(Color.RED);
                  }
              }
-         }
-        );
+         });
     }
 }
-
-
