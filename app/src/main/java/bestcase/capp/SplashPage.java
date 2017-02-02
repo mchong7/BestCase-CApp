@@ -1,10 +1,10 @@
 package bestcase.capp;
 
-/**
+/*
  * Created by Matt on 11/20/2016.
  */
 
-import android.app.Activity;
+// import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 

@@ -626,7 +626,6 @@ public class DataInput extends AppCompatActivity {
                  }
              }
          });
-
          // code for the clear button
         if (clear != null)
          clear.setOnClickListener(new View.OnClickListener()
