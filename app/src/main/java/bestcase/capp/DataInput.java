@@ -1,6 +1,7 @@
 package bestcase.capp;
 
 import android.graphics.Color;
+// import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.lang.String;
@@ -23,25 +24,28 @@ public class DataInput extends AppCompatActivity {
         return etText.getText().toString().trim().length() == 0;
     }
 
+    // variables associated with the text boxes themselves are declared here
+    EditText text_initial_vel;
+    EditText text_final_vel;
+    EditText text_accel;
+    EditText text_time;
+    EditText text_disp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_input);
 
-
+        // variable declaration/initialization for the solve and clear buttons
         Button solve = (Button)findViewById(R.id.solve_button);
+        Button clear = (Button)findViewById(R.id.clear_button);
 
+        if (solve != null)
         solve.setOnClickListener(new View.OnClickListener()
         {
              public void onClick(View v)
              {
-                 // variable declaration/initialization
-                 EditText text_initial_vel = (EditText) findViewById(R.id.initial_vel);
-                 EditText text_final_vel = (EditText) findViewById(R.id.final_vel);
-                 EditText text_accel = (EditText) findViewById(R.id.accel);
-                 EditText text_time = (EditText) findViewById(R.id.time);
-                 EditText text_disp = (EditText) findViewById(R.id.disp);
-
+                 // variable declaration/initialization for the algorithm
                  boolean twoUnknowns = false;
 
                  double initial_vel = 0.0;
@@ -57,7 +61,12 @@ public class DataInput extends AppCompatActivity {
                  String displacement = "";
                  String error;
 
-                 // initialize variables to what the input was in the text boxes
+                 text_initial_vel = (EditText) findViewById(R.id.initial_vel);
+                 text_final_vel = (EditText) findViewById(R.id.final_vel);
+                 text_accel = (EditText) findViewById(R.id.accel);
+                 text_time = (EditText) findViewById(R.id.time);
+                 text_disp = (EditText) findViewById(R.id.disp);
+
                  // Check to make sure that no less than three values are input
                  if ((isEmpty(text_initial_vel) && isEmpty(text_final_vel) && isEmpty(text_accel) && isEmpty(text_time) && isEmpty(text_disp)) ||
                          (isEmpty(text_final_vel) && isEmpty(text_accel) && isEmpty(text_time) && isEmpty(text_disp)) ||
@@ -615,6 +624,20 @@ public class DataInput extends AppCompatActivity {
                      errorButton.setBackgroundColor(Color.LTGRAY);
                      errorButton.setTextColor(Color.RED);
                  }
+             }
+         });
+
+         // code for the clear button
+        if (clear != null)
+         clear.setOnClickListener(new View.OnClickListener()
+         {
+             public void onClick(View v)
+             {
+                 text_initial_vel.setText("");
+                 text_final_vel.setText("");
+                 text_accel.setText("");
+                 text_time.setText("");
+                 text_disp.setText("");
              }
          });
     }
