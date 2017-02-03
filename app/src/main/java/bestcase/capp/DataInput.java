@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.lang.String;
 import java.lang.Double;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import static java.lang.Math.*;
 // import java.io.*;
 import android.view.View;
@@ -79,11 +82,8 @@ public class DataInput extends AppCompatActivity {
         Button clear = (Button)findViewById(R.id.clear_button);
 
         if (solve != null)
-
             solve.setOnClickListener(new View.OnClickListener()
-
             {
-
                 public void onClick(View v) {
 
                     // variable declaration/initialization for the algorithm
@@ -127,7 +127,7 @@ public class DataInput extends AppCompatActivity {
 
                     text_time = (EditText) findViewById(R.id.time);
 
-                    text_disp = (EditText) findViewById(R.id.disp);
+                    text_disp = (EditText) findViewById(R.id.displace);
 
 
                     // Check to make sure that no less than three values are input
@@ -1096,8 +1096,12 @@ public class DataInput extends AppCompatActivity {
 
 
                         ViewDialog dialog = new ViewDialog();
-                        bundle.putString("velocity", final_velocity);
-                        bundle.putString("initial", initial_velocity);
+                        bundle.putString("velocity", String.valueOf(BigDecimal.valueOf(vel).setScale(4, RoundingMode.HALF_UP).doubleValue()));
+                        bundle.putString("initial", String.valueOf(BigDecimal.valueOf(initial_vel).setScale(4, RoundingMode.HALF_UP).doubleValue()));
+                        bundle.putString("accel", String.valueOf(BigDecimal.valueOf(accel).setScale(4, RoundingMode.HALF_UP).doubleValue()));
+                        bundle.putString("time", String.valueOf(BigDecimal.valueOf(dt).setScale(4, RoundingMode.HALF_UP).doubleValue()));
+                        bundle.putString("disp", String.valueOf(BigDecimal.valueOf(disp).setScale(4, RoundingMode.HALF_UP).doubleValue()));
+                        //bundle.putString("initial", String.valueOf(initial_vel).substring(0,4));
                         intent.putExtras(bundle);
 
 
@@ -1120,7 +1124,8 @@ public class DataInput extends AppCompatActivity {
                         String dxOutput5 = "Displacement: " + dx + " meters.";
 
                         alertDialog.setTitle("Results");
-
+                        startActivity(intent);
+/*
                         if (Case == 1) {
                             startActivity(intent);
                             //dialog.showDialog(DataInput.this, v0Output + "\n\n" + velOutput + "\n\n" + vel2Output + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dt2Output + "\n\n" + dxOutput5);
@@ -1130,7 +1135,7 @@ public class DataInput extends AppCompatActivity {
 
                         {
 
-                            dialog.showDialog(DataInput.this, v0Output + "\n\n" + v02Output + "\n\n" + velOutput + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dt2Output + "\n\n" + dxOutput5);
+                            //dialog.showDialog(DataInput.this, v0Output + "\n\n" + v02Output + "\n\n" + velOutput + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dt2Output + "\n\n" + dxOutput5);
 
                         } else
 
@@ -1202,6 +1207,11 @@ public class DataInput extends AppCompatActivity {
                 public void onClick(View v)
 
                 {
+                    text_initial_vel = (EditText) findViewById(R.id.initial_vel);
+                    text_final_vel = (EditText) findViewById(R.id.final_vel);
+                    text_accel = (EditText) findViewById(R.id.accel);
+                    text_time = (EditText) findViewById(R.id.time);
+                    text_disp = (EditText) findViewById(R.id.displace);
 
                     text_initial_vel.setText("");
 
