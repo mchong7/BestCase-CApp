@@ -78,7 +78,7 @@
         android:id="@+id/velocity_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Velocity"
+        android:text="velocity"
         android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignBaseline="@+id/velocity"
@@ -113,7 +113,6 @@
         android:id="@+id/accel_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="Accel"
         android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -213,8 +212,9 @@
         android:layout_weight="1"
         android:text="Results"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        tools:textSize="30dp"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/accel_num" />
+        android:layout_toEndOf="@+id/accel" />
 
 
 </RelativeLayout>
