@@ -22,31 +22,6 @@
 
 
     <TextView
-        android:id="@+id/results"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="left|top"
-        android:layout_weight="1"
-        android:fontFamily="serif"
-        android:text="Results"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30dp"
-  />
-
-    <TextView
-        android:id="@+id/velocity_0_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/unit1"
-        android:layout_alignBottom="@+id/unit1"
-        android:layout_alignEnd="@+id/results"
-        android:layout_marginEnd="15dp"
-        android:text="Initial Velocity"
-        android:textAlignment="textEnd"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
         android:id="@+id/velocity_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,61 +32,6 @@
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/velocity_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/velocity_0_num"
-        android:layout_below="@+id/velocity"
-        android:layout_marginTop="13dp"
-        android:text="Velocity"
-        android:textAlignment="textEnd"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/accel"
-        android:layout_marginTop="49dp"
-        android:text="Time"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/velocity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/velocity_0_num"
-        android:text="Velocity"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/accel_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/unit2"
-        android:layout_alignBottom="@+id/unit2"
-        android:layout_alignStart="@+id/velocity_num"
-
-        android:text="Accel"
-        android:textAlignment="textEnd"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/accel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Acceleration"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/velocity_num"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="14dp" />
-
     <Button
         android:id="@+id/back"
         android:layout_width="wrap_content"
@@ -121,24 +41,96 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:id="@+id/displace"
+        android:id="@+id/unit1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Displacement"
+        android:layout_marginLeft="15dp"
+        android:text="m/s"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/displace_num"
+        android:layout_alignBaseline="@+id/velocity_0"
+        android:layout_alignBottom="@+id/velocity_0"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/velocity_0_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Initial Velocity"
+        android:textAlignment="textEnd"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignBaseline="@+id/velocity_0"
+        android:layout_alignBottom="@+id/velocity_0"
+        android:layout_toStartOf="@+id/unit1" />
+
+    <TextView
+        android:id="@+id/velocity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Velocity"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/velocity_0"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:id="@+id/velocity_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Velocity"
+        android:textAlignment="textEnd"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignBaseline="@+id/velocity"
+        android:layout_alignBottom="@+id/velocity"
+        android:layout_alignStart="@+id/velocity_0_num" />
+
+    <TextView
+        android:id="@+id/accel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acceleration"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/velocity"
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/displace_num"
+        android:id="@+id/unit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time"
+        android:layout_marginLeft="15dp"
+
+        android:text="m/s^2"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignBaseline="@+id/accel"
+        android:layout_alignBottom="@+id/accel"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/accel_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Accel"
         android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignEnd="@+id/accel_num"
-        android:layout_below="@+id/time" />
+        android:layout_alignBaseline="@+id/accel"
+        android:layout_alignBottom="@+id/accel"
+        android:layout_alignStart="@+id/velocity_num" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="Time"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/accel"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/unit3"
@@ -152,33 +144,29 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignBaseline="@+id/velocity_num"
         android:layout_alignBottom="@+id/velocity_num"
-        android:layout_toStartOf="@+id/back"
-        android:layout_marginEnd="20dp" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
-        android:id="@+id/unit1"
+        android:id="@+id/displace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="19dp"
-        android:text="m/s"
+        android:text="Displacement"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/velocity_0"
-        android:layout_alignStart="@+id/unit3" />
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/time"
+        android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/unit2"
+        android:id="@+id/time_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="17dp"
-
-        android:text="m/s^2"
-        android:textAlignment="center"
+        android:text="time"
+        android:textAlignmnt="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/accel"
-        android:layout_toStartOf="@+id/back" />
+        android:layout_alignBaseline="@+id/time"
+        android:layout_alignBottom="@+id/time"
+        android:layout_alignStart="@+id/accel_num" />
 
     <TextView
         android:id="@+id/textView21"
@@ -189,19 +177,9 @@
         android:text="s"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_above="@+id/displace"
-        android:layout_alignStart="@+id/unit2" />
-
-    <TextView
-        android:id="@+id/time_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="displace"
-        android:textAlignment="textEnd"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_marginTop="14dp"
-        android:layout_below="@+id/displace"
-        android:layout_alignStart="@+id/displace_num" />
+        android:layout_alignBaseline="@+id/time_num"
+        android:layout_alignBottom="@+id/time_num"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/unit4"
@@ -212,9 +190,31 @@
         android:text="m"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignBaseline="@+id/time_num"
-        android:layout_alignBottom="@+id/time_num"
-        android:layout_alignStart="@+id/unit3" />
+        android:layout_alignBaseline="@+id/displace_num"
+        android:layout_alignBottom="@+id/displace_num"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/displace_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="disp"
+        android:textAlignment="textEnd"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignBaseline="@+id/displace"
+        android:layout_alignBottom="@+id/displace"
+        android:layout_alignEnd="@+id/time_num" />
+
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top"
+        android:layout_weight="1"
+        android:text="Results"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/accel_num" />
 
 
 </RelativeLayout>
