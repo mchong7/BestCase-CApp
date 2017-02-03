@@ -132,7 +132,7 @@
 
         android:ems="10"
 
-        android:id="@+id/disp"
+        android:id="@+id/displace"
 
         android:layout_below="@+id/time"
 
@@ -152,7 +152,7 @@
 
         android:id="@+id/solve_button"
 
-        android:layout_below="@+id/disp"
+        android:layout_below="@+id/displace"
 
         android:layout_alignParentStart="true" />
 
@@ -166,7 +166,7 @@
 
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/disp"
+        android:layout_below="@+id/displace"
 
         android:layout_toEndOf="@+id/solve_button"
 
