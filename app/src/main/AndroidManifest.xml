@@ -8,26 +8,25 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SplashPage">
 
-        <activity
-            android:name=".SplashPage">
-            <!--android:label="@string/CApp">-->
+            <!-- android:label="@string/CApp"> -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DataInput">
 
-        <activity
-            android:name=".DataInput">
-            <!--android:label="@string/CApp">-->
+            <!-- android:label="@string/CApp"> -->
             <intent-filter>
-                <action android:name="android.intent.action.MAINLAUNCHER"/>
+                <action android:name="android.intent.action.MAINLAUNCHER" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".DisplayResults"></activity>
     </application>
 
 </manifest>
