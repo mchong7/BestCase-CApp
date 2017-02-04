@@ -1,11 +1,21 @@
 <resources>
+
     <string name="app_name">CApp</string>
+
     <string name="data_input">Data Input</string>
+
     <string name="initial_velocity">Initial Velocity</string>
+
     <string name="final_velocity">Final Velocity</string>
+
     <string name="acceleration">Acceleration</string>
+
     <string name="time">Time</string>
+
     <string name="displacement">Displacement</string>
+
     <string name="solve">Solve</string>
+
     <string name="clear">Clear</string>
+
 </resources>
