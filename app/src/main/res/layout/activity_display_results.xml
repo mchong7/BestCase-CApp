@@ -128,7 +128,9 @@
 
 
         android:layout_toLeftOf="@id/unit1"
-        android:layout_marginEnd="10dp"/>
+        android:layout_toEndOf="@+id/velocity_0"
+        android:layout_marginEnd="10dp"
+        />
 
 
 
@@ -175,6 +177,7 @@
 
         android:layout_alignStart="@+id/velocity_0_num"
         android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/velocity_0"
          />
 
 
@@ -199,29 +202,6 @@
 
         android:layout_alignParentStart="true"
         android:fontFamily="serif" />
-
-
-    <TextView
-
-        android:id="@+id/accel_num"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:text="Accel"
-
-        android:textAlignment="textStart"
-
-        android:textAppearance="?android:attr/textAppearanceLarge"
-
-        android:layout_alignBaseline="@+id/accel"
-
-        android:layout_alignBottom="@+id/accel"
-
-        android:layout_alignStart="@+id/velocity_num"
-        android:layout_marginEnd="10dp"/>
-
 
 
     <TextView
@@ -324,7 +304,7 @@
 
     <TextView
 
-        android:id="@+id/textView21"
+        android:id="@+id/unit5"
 
         android:layout_width="wrap_content"
 
@@ -453,6 +433,23 @@
 
         android:layout_above="@+id/explanation"
         android:layout_alignEnd="@+id/time_num" />
+
+    <TextView
+
+        android:id="@+id/accel_num"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="Accel"
+
+        android:textAlignment="textStart"
+
+        android:textAppearance="?android:attr/textAppearanceLarge"
+
+        android:layout_alignTop="@+id/accel"
+        android:layout_toEndOf="@+id/velocity_0" />
 
 
 </RelativeLayout>
