@@ -27,12 +27,17 @@ public class DisplayResults extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = getIntent().getExtras();
         TextView unit2 = (TextView) findViewById((R.id.unit2));
-        unit2.setText(Html.fromHtml("m/s<sup>2</sup>"));
+        unit2.setText(Html.fromHtml("m/s<sup><small>2</sup></small>"));
         TextView initial_vel = (TextView) findViewById(R.id.velocity_0_num);
         TextView vel = (TextView) findViewById(R.id.velocity_num);
         TextView accel = (TextView) findViewById(R.id.accel_num);
         TextView time = (TextView) findViewById(R.id.time_num);
         TextView disp = (TextView) findViewById(R.id.displace_num);
+        TextView expl = (TextView) findViewById(R.id.explanation);
+        if (bundle.getInt("case") == 1) {
+            expl.setText(Html.fromHtml("Equations used: <br></br>v<sup><small>2</sup></small> = v<sub><small>0</sub></small><sup><small>2</sup></small> + 2ax<br></br>" +
+                    "x = 1/2(v + v<sub><small>0</sub></small>)t"));
+        }
         initial_vel.setText(bundle.getString("initial"));
         vel.setText(bundle.getString("velocity"));
         accel.setText(bundle.getString("accel"));

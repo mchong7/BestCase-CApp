@@ -2,6 +2,7 @@ package bestcase.capp;
 import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.lang.String;
@@ -11,6 +12,7 @@ import java.math.RoundingMode;
 
 import static java.lang.Math.*;
 // import java.io.*;
+import android.text.Html;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -21,6 +23,7 @@ import android.app.AlertDialog;
 import android.text.TextUtils;
 // import android.content.Context;
 import android.content.*;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -81,6 +84,7 @@ public class DataInput extends AppCompatActivity {
         Button solve = (Button) findViewById(R.id.solve_button);
         Button clear = (Button)findViewById(R.id.clear_button);
 
+
         if (solve != null)
             solve.setOnClickListener(new View.OnClickListener()
             {
@@ -118,7 +122,7 @@ public class DataInput extends AppCompatActivity {
 
                     String error;
 
-                    String explanation;
+
 
 
                     text_initial_vel = (EditText) findViewById(R.id.initial_vel);
@@ -741,6 +745,7 @@ public class DataInput extends AppCompatActivity {
 
                             error = "";
 
+
                             if (a == 0.0) {
 
                                 vel = v0;
@@ -751,7 +756,8 @@ public class DataInput extends AppCompatActivity {
 
                                 if (v0 * v0 + 2 * a * dx < 0) {
 
-                                    error = "Final velocity and time cannot be found because the product of initial velocity squared added by two and acceleration multiplied by displacement is less than zero.";
+                                    error = "Final velocity and time cannot be found because the product of initial velocity squared " +
+                                            "added by two and acceleration multiplied by displacement is less than zero.";
 
                                 } else {
 
@@ -1103,6 +1109,7 @@ public class DataInput extends AppCompatActivity {
                         bundle.putString("accel", String.valueOf(BigDecimal.valueOf(accel).setScale(3, RoundingMode.HALF_UP).doubleValue()));
                         bundle.putString("time", String.valueOf(BigDecimal.valueOf(dt).setScale(3, RoundingMode.HALF_UP).doubleValue()));
                         bundle.putString("disp", String.valueOf(BigDecimal.valueOf(disp).setScale(3, RoundingMode.HALF_UP).doubleValue()));
+                        bundle.putInt("case", Case);
                         //bundle.putString("initial", String.valueOf(initial_vel).substring(0,4));
                         intent.putExtras(bundle);
 
