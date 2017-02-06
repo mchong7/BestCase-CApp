@@ -15,6 +15,8 @@ import static java.lang.Math.*;
 import android.text.Html;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 // import android.app.Dialog;
@@ -23,7 +25,9 @@ import android.app.AlertDialog;
 import android.text.TextUtils;
 // import android.content.Context;
 import android.content.*;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -83,6 +87,29 @@ public class DataInput extends AppCompatActivity {
 
         Button solve = (Button) findViewById(R.id.solve_button);
         Button clear = (Button)findViewById(R.id.clear_button);
+
+        ImageButton help = (ImageButton) findViewById(R.id.imageButton);
+        help.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                AlertDialog about = new AlertDialog.Builder(DataInput.this).create();
+                about.setMessage("Fill in boxes with appropriate values. " + System.lineSeparator() + "You may only fill in three boxes." + System.lineSeparator() + System.lineSeparator() +
+                "The app will, based on your inputs, output values for all five values." + System.lineSeparator() + System.lineSeparator() + "Press the solve button once you're done, " +
+                        "or press the clear button to reset your inputs.");
+
+
+                about.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.dismiss();
+
+                    }
+
+                });
+                about.show();
+            }
+        });
+
 
 
         if (solve != null)
@@ -1106,7 +1133,7 @@ public class DataInput extends AppCompatActivity {
                         ViewDialog dialog = new ViewDialog();
                         bundle.putString("velocity", String.valueOf(BigDecimal.valueOf(vel).setScale(3, RoundingMode.HALF_UP).doubleValue()));
                         bundle.putString("initial", String.valueOf(BigDecimal.valueOf(initial_vel).setScale(3, RoundingMode.HALF_UP).doubleValue()));
-                        bundle.putString("accel", String.valueOf(BigDecimal.valueOf(accel).setScale(3, RoundingMode.HALF_UP).doubleValue()));
+                        bundle.putString("accel", String.valueOf(BigDecimal.valueOf(a).setScale(3, RoundingMode.HALF_UP).doubleValue()));
                         bundle.putString("time", String.valueOf(BigDecimal.valueOf(dt).setScale(3, RoundingMode.HALF_UP).doubleValue()));
                         bundle.putString("disp", String.valueOf(BigDecimal.valueOf(disp).setScale(3, RoundingMode.HALF_UP).doubleValue()));
                         bundle.putInt("case", Case);
