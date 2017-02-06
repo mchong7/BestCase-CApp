@@ -182,8 +182,7 @@
         android:hint="@string/displacement"
         android:textAlignment="center"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:nextFocusDown="@id/time" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
 

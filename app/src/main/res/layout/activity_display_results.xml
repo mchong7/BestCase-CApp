@@ -375,30 +375,6 @@
         android:layout_alignParentEnd="true" />
 
 
-
-    <TextView
-
-        android:id="@+id/displace_num"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:text="disp"
-
-        android:textAlignment="textStart"
-
-        android:textAppearance="?android:attr/textAppearanceLarge"
-
-        android:layout_alignBaseline="@+id/displace"
-
-        android:layout_alignBottom="@+id/displace"
-
-        android:layout_alignEnd="@+id/time_num"
-        android:layout_marginEnd="10dp"/>
-
-
-
     <TextView
 
         android:id="@+id/results"
@@ -428,9 +404,13 @@
         android:layout_below="@+id/displace"
         android:layout_alignParentStart="true"
         android:layout_marginTop="35dp"
-        android:id="@+id/textView"
+        android:id="@+id/explanation"
         android:layout_above="@+id/back"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
+        android:verticalScrollbarPosition="right"
+        android:scrollbars="vertical"
+        />
 
     <TextView
 
@@ -446,7 +426,7 @@
 
         android:text="m/s^2"
 
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
 
         android:textAppearance="?android:attr/textAppearanceLarge"
 
@@ -454,7 +434,25 @@
 
         android:layout_alignBaseline="@+id/accel_num"
         android:layout_alignBottom="@+id/accel_num"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:clickable="false" />
+
+    <TextView
+
+        android:id="@+id/displace_num"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="disp"
+
+        android:textAlignment="textStart"
+
+        android:textAppearance="?android:attr/textAppearanceLarge"
+
+        android:layout_above="@+id/explanation"
+        android:layout_alignEnd="@+id/time_num" />
 
 
 </RelativeLayout>
