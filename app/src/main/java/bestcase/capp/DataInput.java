@@ -1132,10 +1132,10 @@ public class DataInput extends AppCompatActivity {
 
                         ViewDialog dialog = new ViewDialog();
                         bundle.putString("velocity", String.valueOf(BigDecimal.valueOf(vel).setScale(3, RoundingMode.HALF_UP).doubleValue()));
-                        bundle.putString("initial", String.valueOf(BigDecimal.valueOf(initial_vel).setScale(3, RoundingMode.HALF_UP).doubleValue()));
+                        bundle.putString("initial", String.valueOf(BigDecimal.valueOf(v0).setScale(3, RoundingMode.HALF_UP).doubleValue()));
                         bundle.putString("accel", String.valueOf(BigDecimal.valueOf(a).setScale(3, RoundingMode.HALF_UP).doubleValue()));
                         bundle.putString("time", String.valueOf(BigDecimal.valueOf(dt).setScale(3, RoundingMode.HALF_UP).doubleValue()));
-                        bundle.putString("disp", String.valueOf(BigDecimal.valueOf(disp).setScale(3, RoundingMode.HALF_UP).doubleValue()));
+                        bundle.putString("disp", String.valueOf(BigDecimal.valueOf(dx).setScale(3, RoundingMode.HALF_UP).doubleValue()));
                         bundle.putInt("case", Case);
                         //bundle.putString("initial", String.valueOf(initial_vel).substring(0,4));
                         intent.putExtras(bundle);
