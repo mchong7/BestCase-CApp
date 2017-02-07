@@ -94,7 +94,9 @@ public class DataInput extends AppCompatActivity {
                 AlertDialog about = new AlertDialog.Builder(DataInput.this).create();
                 about.setMessage("Fill in boxes with appropriate values. " + System.lineSeparator() + "You may only fill in three boxes." + System.lineSeparator() + System.lineSeparator() +
                 "The app will, based on your inputs, output values for all five values." + System.lineSeparator() + System.lineSeparator() + "Press the solve button once you're done, " +
-                        "or press the clear button to reset your inputs.");
+                        "or press the clear button to reset your inputs." + System.lineSeparator() + System.lineSeparator() + "Units for each variable are as follows: "
+                        + System.lineSeparator() + "Velocity (initial and final): meters per second" + System.lineSeparator() + "Acceleration: meters per second squared"
+                        + System.lineSeparator() + "Time: Seconds" + System.lineSeparator() + "Displacement: Meters");
 
 
                 about.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
