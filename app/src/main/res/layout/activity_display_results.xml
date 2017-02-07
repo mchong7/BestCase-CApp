@@ -378,7 +378,7 @@
         android:layout_toEndOf="@+id/accel" />
 
     <TextView
-        android:text="TextView"
+        android:text="Explanation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/displace"

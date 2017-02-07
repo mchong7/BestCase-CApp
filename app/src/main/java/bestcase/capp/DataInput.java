@@ -1123,9 +1123,7 @@ public class DataInput extends AppCompatActivity {
                         error = "An invalid number of unknown variables are trying to be solved. Make sure you are solving for 2 unknown variables.";
 
                     }
-
-
-                    // output all the variables
+                    // output all the variables and corresponding explanation
 
                     if (error.equals("")) {
 
