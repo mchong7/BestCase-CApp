@@ -792,7 +792,7 @@ public class DataInput extends AppCompatActivity {
 
                                     vel = sqrt(v0 * v0 + 2 * a * dx);
 
-                                    vel2 = -(sqrt(v0 * v0 + 2 * a * dx));
+                                    vel2 = -(sqrt(v0 * v0 + 2 * a * dx));   //Input variables result in a possible inverse value
 
                                     dt = (vel - v0) / a;
 
@@ -839,13 +839,14 @@ public class DataInput extends AppCompatActivity {
 
                                 if (vel * vel - 2 * a * dx < 0) {
 
-                                    error = "Initial velocity and time cannot be found because the product of final velocity squared subtracted by two and acceleration multiplied by displacement is less than zero.";
+                                    error = "The combination of input variables results in the square root of a negative number. " + 
+                                        "Please change the acceleration and/or displacement values.";
 
                                 } else {
 
                                     v0 = sqrt(vel * vel - 2 * a * dx);
 
-                                    v02 = -(sqrt(vel * vel - 2 * a * dx));
+                                    v02 = -(sqrt(vel * vel - 2 * a * dx));  //Input values result in a possible inverse result
 
                                     dt = (vel - v0) / a;
 
@@ -866,23 +867,29 @@ public class DataInput extends AppCompatActivity {
 
                             error = "";
 
-                            if (dx == 0) {
+                            if (dx == 0) {  //If displacement is zero
 
-                                if (vel == v0) {
-
+                                if (vel == v0) {    //If both displacement and velocity are both equal
+                                    if (vel == v0 == 0)
+                                    {
+                                        a = 0.0;
+                                        t = 0.0;    //arbitrary since object is stationary
+                                    }
+                                    else    //velocity and initial velocity are nonzero (object is moving)
+                                    {
                                     a = 0.0; // a can be anything
 
-                                    dt = 0.0;
+                                    dt = 0.0;   //no displacement but object is moving, therefore time must be zero
 
-                                    error = "Acceleration and time cannot be found if final velocity is equal to initial velocity and displacement is equal to zero.";
+                                    // error = "Acceleration and time cannot be found if final velocity is equal to initial velocity and displacement is equal to zero.";
+                                    }
 
                                 } else if (v0 == -vel) {
-
-                                    error = "Acceleration and time cannot be found if initial velocity is equal to negative final velocity and displacement is equal to zero.";
-
+                                    error = "There is no possible way to determine acceleration and time since there are infinite combinations of both." +
+                                        "Either acceleration or time must be specified or any of the current inputs must be changed.";
                                 } else {
 
-                                    error = "Acceleration and time cannot be found using the given input.";
+                                    error = "Input variables result in division by zero. Displacement must be nonzero or velocities must be equal in magnitude.";
 
                                 }
 
