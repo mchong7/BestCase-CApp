@@ -85,18 +85,20 @@ public class DataInput extends AppCompatActivity {
         setContentView(R.layout.activity_data_input);
 
 
-        Button solve = (Button) findViewById(R.id.solve_button);
+        Button solve = (Button)findViewById(R.id.solve_button);
         Button clear = (Button)findViewById(R.id.clear_button);
 
-        ImageButton help = (ImageButton) findViewById(R.id.imageButton);
+        ImageButton help = (ImageButton)findViewById(R.id.imageButton);
+
         help.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 AlertDialog about = new AlertDialog.Builder(DataInput.this).create();
+                about.setTitle("How to use the Data Input Page");
                 about.setMessage("Fill in boxes with appropriate values. " + System.lineSeparator() + "You may only fill in three boxes." + System.lineSeparator() + System.lineSeparator() +
                 "The app will, based on your inputs, output values for all five values." + System.lineSeparator() + System.lineSeparator() + "Press the solve button once you're done, " +
                         "or press the clear button to reset your inputs." + System.lineSeparator() + System.lineSeparator() + "Units for each variable are as follows: "
                         + System.lineSeparator() + "Velocity (initial and final): meters per second" + System.lineSeparator() + "Acceleration: meters per second squared"
-                        + System.lineSeparator() + "Time: Seconds" + System.lineSeparator() + "Displacement: Meters");
+                        + System.lineSeparator() + "Time: Seconds" + System.lineSeparator() + "Displacement: Meters" + System.lineSeparator());
 
 
                 about.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
@@ -108,7 +110,15 @@ public class DataInput extends AppCompatActivity {
                     }
 
                 });
+
                 about.show();
+
+                Button aboutOkButton = about.getButton(AlertDialog.BUTTON_NEUTRAL);
+
+                aboutOkButton.setBackgroundColor(Color.rgb(214, 215, 215));
+
+                aboutOkButton.setTextColor(Color.BLACK);
+
             }
         });
 
@@ -870,10 +880,10 @@ public class DataInput extends AppCompatActivity {
                             if (dx == 0) {  //If displacement is zero
 
                                 if (vel == v0) {    //If both displacement and velocity are both equal
-                                    if (vel == v0 == 0)
+                                    if (vel == 0)
                                     {
                                         a = 0.0;
-                                        t = 0.0;    //arbitrary since object is stationary
+                                        dt = 0.0;    //arbitrary since object is stationary
                                     }
                                     else    //velocity and initial velocity are nonzero (object is moving)
                                     {
@@ -1212,13 +1222,13 @@ public class DataInput extends AppCompatActivity {
 
                     else {
 
-                        AlertDialog error_alert = new AlertDialog.Builder(DataInput.this).create();
+                        AlertDialog errorAlert = new AlertDialog.Builder(DataInput.this).create();
 
-                        error_alert.setTitle("Error");
+                        errorAlert.setTitle("Error");
 
-                        error_alert.setMessage(error);
+                        errorAlert.setMessage(error + System.lineSeparator());
 
-                        error_alert.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        errorAlert.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int which) {
 
@@ -1228,13 +1238,13 @@ public class DataInput extends AppCompatActivity {
 
                         });
 
-                        error_alert.show();
+                        errorAlert.show();
 
-                        Button errorButton = error_alert.getButton(AlertDialog.BUTTON_NEUTRAL);
+                        Button errorOkButton = errorAlert.getButton(AlertDialog.BUTTON_NEUTRAL);
 
-                        errorButton.setBackgroundColor(Color.LTGRAY);
+                        errorOkButton.setBackgroundColor(Color.rgb(214, 215, 215));
 
-                        errorButton.setTextColor(Color.RED);
+                        errorOkButton.setTextColor(Color.BLACK);
 
                     }
 
