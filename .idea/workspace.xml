@@ -9,14 +9,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ff80e3-390a-4d0b-afd2-3455e61fa941" name="Default" comment="Disabled screen rotation.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+    <list default="true" id="91ff80e3-390a-4d0b-afd2-3455e61fa941" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/bestcase/capp/DataInput.java" afterPath="$PROJECT_DIR$/app/src/main/java/bestcase/capp/DataInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
     </list>
     <ignored path="BestCase-CApp-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,7 +71,7 @@
       <file leaf-file-name="DataInput.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/bestcase/capp/DataInput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="371">
               <caret line="884" column="48" selection-start-line="884" selection-start-column="48" selection-end-line="884" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -86,12 +81,12 @@
                 <element signature="e#3650#3852#0" expanded="true" />
                 <element signature="e#3851#3852#0" expanded="true" />
                 <element signature="e#4129#4130#0" expanded="true" />
-                <element signature="e#4200#38087#0" expanded="true" />
-                <element signature="e#37501#37735#0" expanded="true" />
-                <element signature="e#37734#37735#0" expanded="true" />
-                <element signature="e#38086#38087#0" expanded="true" />
-                <element signature="e#38159#38901#0" expanded="true" />
-                <element signature="e#38900#38901#0" expanded="true" />
+                <element signature="e#4200#38098#0" expanded="true" />
+                <element signature="e#37512#37746#0" expanded="true" />
+                <element signature="e#37745#37746#0" expanded="true" />
+                <element signature="e#38097#38098#0" expanded="true" />
+                <element signature="e#38170#38912#0" expanded="true" />
+                <element signature="e#38911#38912#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2127,7 +2122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487979795770</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Did some bug fixes in the DataInput.java file.">
+      <created>1489034737166</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1489034737167</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2182,7 +2184,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Explanations place-holders for each case/corrected data transmission in datainput." />
     <MESSAGE value="Disabled screen rotation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Disabled screen rotation." />
+    <MESSAGE value="Did some bug fixes in the DataInput.java file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Did some bug fixes in the DataInput.java file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2233,12 +2236,12 @@
             <element signature="e#3650#3852#0" expanded="true" />
             <element signature="e#3851#3852#0" expanded="true" />
             <element signature="e#4129#4130#0" expanded="true" />
-            <element signature="e#4200#38087#0" expanded="true" />
-            <element signature="e#37501#37735#0" expanded="true" />
-            <element signature="e#37734#37735#0" expanded="true" />
-            <element signature="e#38086#38087#0" expanded="true" />
-            <element signature="e#38159#38901#0" expanded="true" />
-            <element signature="e#38900#38901#0" expanded="true" />
+            <element signature="e#4200#38098#0" expanded="true" />
+            <element signature="e#37512#37746#0" expanded="true" />
+            <element signature="e#37745#37746#0" expanded="true" />
+            <element signature="e#38097#38098#0" expanded="true" />
+            <element signature="e#38170#38912#0" expanded="true" />
+            <element signature="e#38911#38912#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2263,12 +2266,12 @@
             <element signature="e#3650#3852#0" expanded="true" />
             <element signature="e#3851#3852#0" expanded="true" />
             <element signature="e#4129#4130#0" expanded="true" />
-            <element signature="e#4200#38087#0" expanded="true" />
-            <element signature="e#37501#37735#0" expanded="true" />
-            <element signature="e#37734#37735#0" expanded="true" />
-            <element signature="e#38086#38087#0" expanded="true" />
-            <element signature="e#38159#38901#0" expanded="true" />
-            <element signature="e#38900#38901#0" expanded="true" />
+            <element signature="e#4200#38098#0" expanded="true" />
+            <element signature="e#37512#37746#0" expanded="true" />
+            <element signature="e#37745#37746#0" expanded="true" />
+            <element signature="e#38097#38098#0" expanded="true" />
+            <element signature="e#38170#38912#0" expanded="true" />
+            <element signature="e#38911#38912#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2323,12 +2326,12 @@
             <element signature="e#3650#3852#0" expanded="true" />
             <element signature="e#3851#3852#0" expanded="true" />
             <element signature="e#4129#4130#0" expanded="true" />
-            <element signature="e#4200#38087#0" expanded="true" />
-            <element signature="e#37501#37735#0" expanded="true" />
-            <element signature="e#37734#37735#0" expanded="true" />
-            <element signature="e#38086#38087#0" expanded="true" />
-            <element signature="e#38159#38901#0" expanded="true" />
-            <element signature="e#38900#38901#0" expanded="true" />
+            <element signature="e#4200#38098#0" expanded="true" />
+            <element signature="e#37512#37746#0" expanded="true" />
+            <element signature="e#37745#37746#0" expanded="true" />
+            <element signature="e#38097#38098#0" expanded="true" />
+            <element signature="e#38170#38912#0" expanded="true" />
+            <element signature="e#38911#38912#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2353,12 +2356,12 @@
             <element signature="e#3650#3852#0" expanded="true" />
             <element signature="e#3851#3852#0" expanded="true" />
             <element signature="e#4129#4130#0" expanded="true" />
-            <element signature="e#4200#38087#0" expanded="true" />
-            <element signature="e#37501#37735#0" expanded="true" />
-            <element signature="e#37734#37735#0" expanded="true" />
-            <element signature="e#38086#38087#0" expanded="true" />
-            <element signature="e#38159#38901#0" expanded="true" />
-            <element signature="e#38900#38901#0" expanded="true" />
+            <element signature="e#4200#38098#0" expanded="true" />
+            <element signature="e#37512#37746#0" expanded="true" />
+            <element signature="e#37745#37746#0" expanded="true" />
+            <element signature="e#38097#38098#0" expanded="true" />
+            <element signature="e#38170#38912#0" expanded="true" />
+            <element signature="e#38911#38912#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2406,12 +2409,12 @@
             <element signature="e#3650#3852#0" expanded="true" />
             <element signature="e#3851#3852#0" expanded="true" />
             <element signature="e#4129#4130#0" expanded="true" />
-            <element signature="e#4200#38087#0" expanded="true" />
-            <element signature="e#37501#37735#0" expanded="true" />
-            <element signature="e#37734#37735#0" expanded="true" />
-            <element signature="e#38086#38087#0" expanded="true" />
-            <element signature="e#38159#38901#0" expanded="true" />
-            <element signature="e#38900#38901#0" expanded="true" />
+            <element signature="e#4200#38098#0" expanded="true" />
+            <element signature="e#37512#37746#0" expanded="true" />
+            <element signature="e#37745#37746#0" expanded="true" />
+            <element signature="e#38097#38098#0" expanded="true" />
+            <element signature="e#38170#38912#0" expanded="true" />
+            <element signature="e#38911#38912#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2448,12 +2451,12 @@
             <element signature="e#3650#3852#0" expanded="true" />
             <element signature="e#3851#3852#0" expanded="true" />
             <element signature="e#4129#4130#0" expanded="true" />
-            <element signature="e#4200#38087#0" expanded="true" />
-            <element signature="e#37501#37735#0" expanded="true" />
-            <element signature="e#37734#37735#0" expanded="true" />
-            <element signature="e#38086#38087#0" expanded="true" />
-            <element signature="e#38159#38901#0" expanded="true" />
-            <element signature="e#38900#38901#0" expanded="true" />
+            <element signature="e#4200#38098#0" expanded="true" />
+            <element signature="e#37512#37746#0" expanded="true" />
+            <element signature="e#37745#37746#0" expanded="true" />
+            <element signature="e#38097#38098#0" expanded="true" />
+            <element signature="e#38170#38912#0" expanded="true" />
+            <element signature="e#38911#38912#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2478,12 +2481,12 @@
             <element signature="e#3650#3852#0" expanded="true" />
             <element signature="e#3851#3852#0" expanded="true" />
             <element signature="e#4129#4130#0" expanded="true" />
-            <element signature="e#4200#38087#0" expanded="true" />
-            <element signature="e#37501#37735#0" expanded="true" />
-            <element signature="e#37734#37735#0" expanded="true" />
-            <element signature="e#38086#38087#0" expanded="true" />
-            <element signature="e#38159#38901#0" expanded="true" />
-            <element signature="e#38900#38901#0" expanded="true" />
+            <element signature="e#4200#38098#0" expanded="true" />
+            <element signature="e#37512#37746#0" expanded="true" />
+            <element signature="e#37745#37746#0" expanded="true" />
+            <element signature="e#38097#38098#0" expanded="true" />
+            <element signature="e#38170#38912#0" expanded="true" />
+            <element signature="e#38911#38912#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2508,12 +2511,12 @@
             <element signature="e#3650#3852#0" expanded="true" />
             <element signature="e#3851#3852#0" expanded="true" />
             <element signature="e#4129#4130#0" expanded="true" />
-            <element signature="e#4200#38087#0" expanded="true" />
-            <element signature="e#37501#37735#0" expanded="true" />
-            <element signature="e#37734#37735#0" expanded="true" />
-            <element signature="e#38086#38087#0" expanded="true" />
-            <element signature="e#38159#38901#0" expanded="true" />
-            <element signature="e#38900#38901#0" expanded="true" />
+            <element signature="e#4200#38098#0" expanded="true" />
+            <element signature="e#37512#37746#0" expanded="true" />
+            <element signature="e#37745#37746#0" expanded="true" />
+            <element signature="e#38097#38098#0" expanded="true" />
+            <element signature="e#38170#38912#0" expanded="true" />
+            <element signature="e#38911#38912#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2632,7 +2635,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/bestcase/capp/DataInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="371">
           <caret line="884" column="48" selection-start-line="884" selection-start-column="48" selection-end-line="884" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2642,12 +2645,12 @@
             <element signature="e#3650#3852#0" expanded="true" />
             <element signature="e#3851#3852#0" expanded="true" />
             <element signature="e#4129#4130#0" expanded="true" />
-            <element signature="e#4200#38087#0" expanded="true" />
-            <element signature="e#37501#37735#0" expanded="true" />
-            <element signature="e#37734#37735#0" expanded="true" />
-            <element signature="e#38086#38087#0" expanded="true" />
-            <element signature="e#38159#38901#0" expanded="true" />
-            <element signature="e#38900#38901#0" expanded="true" />
+            <element signature="e#4200#38098#0" expanded="true" />
+            <element signature="e#37512#37746#0" expanded="true" />
+            <element signature="e#37745#37746#0" expanded="true" />
+            <element signature="e#38097#38098#0" expanded="true" />
+            <element signature="e#38170#38912#0" expanded="true" />
+            <element signature="e#38911#38912#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -880,7 +880,7 @@ public class DataInput extends AppCompatActivity {
                             if (dx == 0) {  //If displacement is zero
 
                                 if (vel == v0) {    //If both displacement and velocity are both equal
-                                    if (vel == 0)
+                                    if (vel == 0 && v0 == 0)
                                     {
                                         a = 0.0;
                                         dt = 0.0;    //arbitrary since object is stationary
