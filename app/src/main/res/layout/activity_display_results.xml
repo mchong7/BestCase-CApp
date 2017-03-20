@@ -50,17 +50,14 @@
 
     <TextView
         android:id="@+id/velocity_0_num"
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Initial Velocity"
         android:textAlignment="textStart"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignBaseline="@+id/velocity_0"
-        android:layout_alignBottom="@+id/velocity_0"
-        android:layout_toLeftOf="@id/unit1"
+        android:layout_alignBottom="@+id/unit1"
         android:layout_toEndOf="@+id/velocity_0"
-        android:layout_marginEnd="10dp"
-        />
+        android:layout_alignTop="@+id/velocity_0" />
 
     <TextView
         android:id="@+id/velocity"
@@ -76,17 +73,16 @@
 
     <TextView
         android:id="@+id/velocity_num"
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="velocity"
-        android:textAlignment="textStart"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignBaseline="@+id/velocity"
         android:layout_alignBottom="@+id/velocity"
         android:layout_alignStart="@+id/velocity_0_num"
         android:layout_marginEnd="10dp"
         android:layout_toEndOf="@+id/velocity_0"
-         />
+        android:text="velocity"
+        android:textAlignment="textStart"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/accel"
@@ -139,15 +135,13 @@
 
     <TextView
         android:id="@+id/time_num"
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/displace"
+        android:layout_alignStart="@+id/accel_num"
         android:text="time"
         android:textAlignment="textStart"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignBaseline="@+id/time"
-        android:layout_alignBottom="@+id/time"
-        android:layout_alignStart="@+id/accel_num"
-        android:layout_marginEnd="10dp"/>
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/unit5"
@@ -218,7 +212,7 @@
 
     <TextView
         android:id="@+id/displace_num"
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="disp"
         android:textAlignment="textStart"
@@ -228,11 +222,11 @@
 
     <TextView
         android:id="@+id/accel_num"
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/accel"
+        android:layout_toEndOf="@+id/velocity_0"
         android:text="Accel"
         android:textAlignment="textStart"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignTop="@+id/accel"
-        android:layout_toEndOf="@+id/velocity_0" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 </RelativeLayout>
