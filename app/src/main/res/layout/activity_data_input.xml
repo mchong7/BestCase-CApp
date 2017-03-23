@@ -26,62 +26,60 @@
         android:id="@+id/initial_vel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/clear_button"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Title"
-        android:layout_marginTop="54dp"
         android:ems="10"
         android:hint="@string/initial_velocity"
         android:inputType="numberSigned|numberDecimal"
         android:nextFocusDown="@+id/final_vel"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_above="@+id/final_vel"
+        android:layout_alignStart="@+id/final_vel"
+        android:layout_marginBottom="14dp" />
 
     <EditText
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/accel"
-        android:layout_alignBottom="@+id/accel"
-        android:layout_toEndOf="@+id/initial_vel"
         android:ems="10"
         android:hint="@string/time"
         android:inputType="numberDecimal"
         android:nextFocusDown="@id/accel"
         android:nextFocusForward="@id/accel"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/displace"
+        android:layout_alignStart="@+id/displace" />
 
     <EditText
         android:id="@+id/accel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/initial_vel"
-        android:layout_marginTop="25dp"
-        android:layout_toStartOf="@+id/time"
         android:ems="10"
         android:hint="@string/acceleration"
         android:inputType="numberSigned|numberDecimal"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/time"
+        android:layout_alignStart="@+id/time" />
 
     <EditText
         android:id="@+id/displace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:ems="10"
         android:hint="@string/displacement"
         android:inputType="numberSigned|numberDecimal"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/solve_button"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/final_vel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/initial_vel"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/initial_vel"
-        android:layout_toEndOf="@+id/initial_vel"
+        android:layout_alignBottom="@+id/accel"
+        android:layout_alignStart="@+id/accel"
+        android:layout_marginBottom="56dp"
         android:ems="10"
         android:hint="@string/final_velocity"
         android:inputType="numberSigned|numberDecimal"
@@ -91,19 +89,19 @@
         android:id="@+id/solve_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="66dp"
-        android:text="@string/solve" />
+        android:text="@string/solve"
+        android:layout_above="@+id/clear_button"
+        android:layout_alignStart="@+id/clear_button"
+        android:layout_marginBottom="11dp" />
 
     <Button
         android:id="@+id/clear_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/solve_button"
-        android:layout_alignBottom="@+id/solve_button"
-        android:layout_toEndOf="@+id/solve_button"
-        android:text="@string/clear" />
+        android:text="@string/clear"
+        android:layout_marginBottom="41dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/Title" />
 
     <ImageButton
         android:id="@+id/imageButton"
