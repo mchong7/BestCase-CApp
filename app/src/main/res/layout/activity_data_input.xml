@@ -26,14 +26,14 @@
         android:id="@+id/initial_vel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/final_vel"
+        android:layout_alignStart="@+id/final_vel"
+        android:layout_marginBottom="14dp"
         android:ems="10"
         android:hint="@string/initial_velocity"
         android:inputType="numberSigned|numberDecimal"
         android:nextFocusDown="@+id/final_vel"
-        android:textAlignment="center"
-        android:layout_above="@+id/final_vel"
-        android:layout_alignStart="@+id/final_vel"
-        android:layout_marginBottom="14dp" />
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/time"
@@ -42,8 +42,6 @@
         android:ems="10"
         android:hint="@string/time"
         android:inputType="numberDecimal"
-        android:nextFocusDown="@id/accel"
-        android:nextFocusForward="@id/accel"
         android:textAlignment="center"
         android:layout_marginBottom="15dp"
         android:layout_above="@+id/displace"
@@ -99,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clear"
-        android:layout_marginBottom="41dp"
+        android:layout_marginBottom="55dp"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/Title" />
 
