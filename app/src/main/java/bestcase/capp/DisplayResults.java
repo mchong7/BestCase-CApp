@@ -1,5 +1,4 @@
 package bestcase.capp;
-
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -13,27 +12,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
-
 import java.awt.font.TextAttribute;
 import java.text.AttributedString;
-
 public class DisplayResults extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_results);
         Button b = (Button) findViewById(R.id.back);
-        Intent intent = getIntent();
         Bundle bundle = getIntent().getExtras();
-        TextView unit1 = (TextView) findViewById((R.id.unit1));
-        TextView unit2 = (TextView) findViewById((R.id.unit3));
-        TextView unit3 = (TextView) findViewById((R.id.unit2));
-        TextView unit4 = (TextView) findViewById((R.id.unit5));
-        TextView unit5 = (TextView) findViewById((R.id.unit4));
-        unit3.setText(Html.fromHtml("m/s<sup><small>2</sup></small>"));
+
         TextView initial_vel = (TextView) findViewById(R.id.velocity_0_num);
         TextView vel = (TextView) findViewById(R.id.velocity_num);
         TextView accel = (TextView) findViewById(R.id.accel_num);
@@ -80,7 +69,6 @@ public class DisplayResults extends AppCompatActivity {
         {
             expl.setText("Case 10 explanation");
         }
-
         initial_vel.setText(bundle.getString("initial"));
         vel.setText(bundle.getString("velocity"));
         accel.setText(bundle.getString("accel"));
@@ -94,12 +82,5 @@ public class DisplayResults extends AppCompatActivity {
             }
         }
         );
-
-
-
-
     }
-
-
-
 }

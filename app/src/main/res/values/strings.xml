@@ -18,6 +18,8 @@
 
     <string name="clear">Clear</string>
 
+    <string name="results">Results</string>
+
     <string-array name="spinner1">
                 <item>Mercury</item>
                 <item>Venus</item>

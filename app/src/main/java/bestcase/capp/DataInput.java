@@ -5,10 +5,14 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import java.awt.font.TextAttribute;
 import java.lang.String;
 import java.lang.Double;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.AttributedString;
+
 import static java.lang.Math.*;
 // import java.io.*;
 import android.text.Html;
@@ -600,48 +604,14 @@ public class DataInput extends AppCompatActivity {
                     }
                     // output all the variables and corresponding explanation
                     if (error.equals("")) {
-                        ViewDialog dialog = new ViewDialog();
-                        bundle.putString("velocity", String.valueOf(BigDecimal.valueOf(vel).setScale(3, RoundingMode.HALF_UP).doubleValue()));
-                        bundle.putString("initial", String.valueOf(BigDecimal.valueOf(v0).setScale(3, RoundingMode.HALF_UP).doubleValue()));
-                        bundle.putString("accel", String.valueOf(BigDecimal.valueOf(a).setScale(3, RoundingMode.HALF_UP).doubleValue()));
-                        bundle.putString("time", String.valueOf(BigDecimal.valueOf(dt).setScale(3, RoundingMode.HALF_UP).doubleValue()));
-                        bundle.putString("disp", String.valueOf(BigDecimal.valueOf(dx).setScale(3, RoundingMode.HALF_UP).doubleValue()));
+                        bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                        bundle.putString("velocity", "Final Velocity: " + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                        bundle.putString("accel", "Acceleration: " + String.valueOf(BigDecimal.valueOf(a).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s\u00B2");
+                        bundle.putString("time", "Time: " + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
+                        bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m");
                         bundle.putInt("case", Case);
-                        //bundle.putString("initial", String.valueOf(initial_vel).substring(0,4));
                         intent.putExtras(bundle);
-                        AlertDialog alertDialog = new AlertDialog.Builder(DataInput.this).create();
-                        String v0Output = "Initial Velocity: " + v0 + " m/s.";
-                        String v02Output = "Second Initial Velocity: " + v02 + " m/s.";
-                        String velOutput = "Final Velocity: " + vel + " m/s.";
-                        String vel2Output = "Second Final Velocity: " + vel2 + " m/s.";
-                        String aOutput = "Acceleration: " + a + " m/s^2.";
-                        String dtOutput = "Time: " + dt + " seconds.";
-                        String dt2Output = "Second Time: " + dt2 + " seconds.";
-                        String dxOutput5 = "Displacement: " + dx + " meters.";
-                        alertDialog.setTitle("Results");
                         startActivity(intent);
-/*
-                        if (Case == 1) {
-                            startActivity(intent);
-                            //dialog.showDialog(DataInput.this, v0Output + "\n\n" + velOutput + "\n\n" + vel2Output + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dt2Output + "\n\n" + dxOutput5);
-                            // alertDialog.setMessage(v0Output + "\n\n" + velOutput + "\n\n" + vel2Output + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dt2Output + "\n\n" + dxOutput5);
-                        } else if (Case == 2)
-                        {
-                            //dialog.showDialog(DataInput.this, v0Output + "\n\n" + v02Output + "\n\n" + velOutput + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dt2Output + "\n\n" + dxOutput5);
-                        } else
-                        {
-                            dialog.showDialog(DataInput.this, v0Output + "\n\n" + velOutput + "\n\n" + aOutput + "\n\n" + dtOutput + "\n\n" + dxOutput5);
-                        }
-                    /*alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-                    alertDialog.show);
-                    Button validInputButton = alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL);
-                    validInputButton.setBackgroundColor(Color.LTGRAY);
-                    validInputButton.setTextColor(Color.BLUE);
-*/
                     }
                     // output an error if one occurs
                     else {
