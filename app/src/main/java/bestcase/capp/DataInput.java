@@ -5,14 +5,12 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import java.awt.font.TextAttribute;
 import java.lang.String;
 import java.lang.Double;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.AttributedString;
-
 import static java.lang.Math.*;
 // import java.io.*;
 import android.text.Html;
@@ -425,6 +423,7 @@ public class DataInput extends AppCompatActivity {
                                     vel2 = -(sqrt(v0 * v0 + 2 * a * dx));   //Input variables result in a possible inverse value
                                     dt = (vel - v0) / a;
                                     dt2 = (vel2 - v0) / a;
+                                    Case = 2;
                                 }
                             }
                         }
@@ -437,12 +436,14 @@ public class DataInput extends AppCompatActivity {
                                 if ((vel == 0.0) && (dx == 0.0)) {
                                     v0 = 0.0;
                                     dt = 0.0;
+                                    Case = 3;
                                 } else if ((vel == 0.0) && (dx != 0.0)) {
                                     error = "The values given are not possible, because an object cannot move if it has no acceleration and no velocity." +
                                             "Please change the given values.";
                                 } else {
                                     v0 = vel;
                                     dt = dx / v0;
+                                    Case = 4;
                                 }
                             } else {
                                 if (vel * vel - 2 * a * dx < 0) {
@@ -453,6 +454,7 @@ public class DataInput extends AppCompatActivity {
                                     v02 = -(sqrt(vel * vel - 2 * a * dx));  //Input values result in a possible inverse result
                                     dt = (vel - v0) / a;
                                     dt2 = (vel - v02) / a;
+                                    Case = 5;
                                 }
                             }
                         }
@@ -465,11 +467,12 @@ public class DataInput extends AppCompatActivity {
                                     if (vel == 0 && v0 == 0) {
                                         a = 0.0;
                                         dt = 0.0;    //arbitrary since object is stationary
+                                        Case = 6;
                                     } else    //velocity and initial velocity are nonzero (object is moving)
                                     {
                                         a = 0.0; // a can be anything
                                         dt = 0.0;   //no displacement but object is moving, therefore time must be zero
-                                        // error = "Acceleration and time cannot be found if final velocity is equal to initial velocity and displacement is equal to zero.";
+                                        Case = 7;
                                     }
                                 } else if (v0 == -vel) {
                                     error = "There is no possible way to determine acceleration and time since there are infinite combinations of both." +
@@ -481,8 +484,10 @@ public class DataInput extends AppCompatActivity {
                                 a = (vel * vel - v0 * v0) / (2.0 * dx);
                                 if (a == 0.0) {
                                     dt = dx / v0;
+                                    Case = 8;
                                 } else {
                                     dt = (vel - v0) / a;
+                                    Case = 9;
                                 }
                             }
                         }
@@ -502,6 +507,7 @@ public class DataInput extends AppCompatActivity {
                             } else {
                                 dx = (vel * vel - v0 * v0) / (2.0 * a);
                                 dt = (vel - v0) / a;
+                                Case = 10;
                             }
                         }
                         // end of code segment for case 4
@@ -512,7 +518,7 @@ public class DataInput extends AppCompatActivity {
                                 if (vel == v0) {
                                     dx = 0.0;
                                     a = 0.0;  // any a works
-                                    //error = "Acceleration and displacement cannot be found if final velocity is equal to initial velocity and time is equal to zero.";
+                                    Case = 11;
                                 } else {
                                     error = "The given values imply infinite acceleration, since the velocities changed in zero time." +
                                             "Change the value of time to be nonzero, or make velocities equal.";
@@ -520,6 +526,7 @@ public class DataInput extends AppCompatActivity {
                             } else {
                                 a = (vel - v0) / dt;
                                 dx = v0 * dt + 0.5 * a * dt * dt;
+                                Case = 12;
                             }
                         }
                         // end of code segment for case 5
@@ -528,6 +535,7 @@ public class DataInput extends AppCompatActivity {
                             error = "";
                             vel = v0 + a * dt;
                             dx = v0 * dt + 0.5 * a * dt * dt;
+                            Case = 13;
                         }
                         // end of code segment for case 6
                         // Case 7: solve for initial velocity and displacement
@@ -535,6 +543,7 @@ public class DataInput extends AppCompatActivity {
                             error = "";
                             v0 = vel - a * dt;
                             dx = v0 * dt + 0.5 * a * dt * dt;
+                            Case = 14;
                         }
                         // end of code segment for case 7
                         // Case 8: solve for acceleration and final velocity
@@ -544,7 +553,7 @@ public class DataInput extends AppCompatActivity {
                                 if (dx == 0.0) {
                                     a = 0.0;  // a can be anything
                                     vel = v0;
-                                    //error = "Final velocity and acceleration cannot be found if time and displacement are equal to zero.";
+                                    Case = 15;
                                 } else {
                                     error = "The given values imply infinite acceleration, since there was a displacement in zero time." +
                                             "Change the value of time to be nonzero, or make displacement zero.";
@@ -552,6 +561,7 @@ public class DataInput extends AppCompatActivity {
                             } else {
                                 a = 2 / (dt * dt) * (dx - v0 * dt);
                                 vel = v0 + a * dt;
+                                Case = 16;
                             }
                         }
                         // end of code segment for case 8
@@ -570,6 +580,7 @@ public class DataInput extends AppCompatActivity {
                                 //if x is 0, velocities should be inverse values of each other
                                 v0 = 1.0 / dt * (dx - 0.5 * a * dt * dt);
                                 vel = v0 + a * dt;
+                                Case = 17;
                             }
                         }
                         // end of code segment for case 9
@@ -588,6 +599,7 @@ public class DataInput extends AppCompatActivity {
                             } else {
                                 a = 2.0 / (dt * dt) * (vel * dt - dx);
                                 v0 = vel - a * dt;
+                                Case = 18;
                             }
                         }
                         // end of code segment for case 10
