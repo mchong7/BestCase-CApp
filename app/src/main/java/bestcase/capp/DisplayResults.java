@@ -31,134 +31,115 @@ public class DisplayResults extends AppCompatActivity {
         TextView accel = (TextView) findViewById(R.id.accel_num);
         TextView time = (TextView) findViewById(R.id.time_num);
         TextView disp = (TextView) findViewById(R.id.displace_num);
-        final TextView expl = (TextView) findViewById(R.id.explanation);
+        final TextView expl = (TextView) findViewById(R.id.explain);
         explain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                AlertDialog about = new AlertDialog.Builder(DisplayResults.this).create();
-                about.setTitle("Explanation of Answers");
+                AlertDialog explanations = new AlertDialog.Builder(DisplayResults.this).create();
+                explanations.setTitle("Explanation of Answers");
+
+                //Unicode characters:
+                //  u00B2 = 2 squared
+                //  u2080 = 0 subscript
+                //  u0394 = delta
+                //  u00B1 = plus minus sign
+                //  u221A = square root
+
                 //Case 1.a
                 if (bundle.getInt("case") == 1) {
-                    expl.setText("");
+                    explanations.setMessage("The given values are initial velocity, acceleration, and displacement. " +
+                            "We're looking for velocity and time values, and we're going to use the following equations to solve for them." +
+                            System.lineSeparator() + System.lineSeparator() + "v\u00B2 = v\u2080\u00B2 + 2a\u0394x" + System.lineSeparator() +
+                            "v = v\u2080 + at" + System.lineSeparator() + System.lineSeparator() + "From these equations, we can derive the following to solve" +
+                            "for our missing variables." + System.lineSeparator() + System.lineSeparator() + "v = \u00B1\u221Av\u2080\u00B2 + 2a\u0394x +" +
+                            System.lineSeparator() + "t = \u00B1(v - v\u2080)/a" + System.lineSeparator() + System.lineSeparator() +
+                            "If we fill in the known values for these equations, we get: " +
+                            System.lineSeparator() + System.lineSeparator() + "v = \u00B1\u221A(" + bundle.getString("initial") + ")\u00B2 + 2(" +
+                            bundle.getString("accel") + ")(" + bundle.getString("disp") + ") = \u00B1" + bundle.getString("velocity") + System.lineSeparator() + System.lineSeparator() +
+                            "Once we have the value of velocity, we can get the value for time easily:" + System.lineSeparator() + System.lineSeparator() +
+                            "t = \u221A((" + bundle.getString("velocity") + ") - (" + bundle.getString("initial") + "))/(" + bundle.getString("accel") +
+                            ") = \u00B1" + bundle.getString("time") + System.lineSeparator());
+
                 }
                 //Case 1.c
                 if (bundle.getInt("case") == 2) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 2.a
                 if (bundle.getInt("case") == 3) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 2.c
                 if (bundle.getInt("case") == 4) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 2.e
                 if (bundle.getInt("case") == 5) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 3.a
                 if (bundle.getInt("case") == 6) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 3.b
                 if (bundle.getInt("case") == 7) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 3.e
                 if (bundle.getInt("case") == 8) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 3.f
                 if (bundle.getInt("case") == 9) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 4.c
                 if (bundle.getInt("case") == 10) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 5.c
                 if (bundle.getInt("case") == 11) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 6.a
                 if (bundle.getInt("case") == 12) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 7.a
                 if (bundle.getInt("case") == 13) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 8.a
                 if (bundle.getInt("case") == 14) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 8.c
                 if (bundle.getInt("case") == 15) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 9.c
                 if (bundle.getInt("case") == 16) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 10.a
                 if (bundle.getInt("case") == 17) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
                 //Case 10.c
                 if (bundle.getInt("case") == 18) {
-                    expl.setText("");
+                    explanations.setMessage("");
                 }
-                about.setMessage("");
-                about.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                explanations.setMessage("");
+                explanations.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
                 });
-                about.show();
-                Button aboutOkButton = about.getButton(AlertDialog.BUTTON_NEUTRAL);
-                aboutOkButton.setBackgroundColor(Color.rgb(214, 215, 215));
-                aboutOkButton.setTextColor(Color.BLACK);
+                explanations.show();
+                Button explanationsOkButton = explanations.getButton(AlertDialog.BUTTON_NEUTRAL);
+                explanationsOkButton.setBackgroundColor(Color.rgb(214, 215, 215));
+                explanationsOkButton.setTextColor(Color.BLACK);
             }
         });
-        if (bundle.getInt("case") == 1) {
-            expl.setText("");
-        }
-        else if(bundle.getInt("case") == 2)
-        {
-            expl.setText("Case 2 explanation");
-        }
-        else if(bundle.getInt("case") == 3)
-        {
-            expl.setText("Case 3 explanation");
-        }
-        else if(bundle.getInt("case") == 4)
-        {
-            expl.setText("Case 4 explanation");
-        }
-        else if(bundle.getInt("case") == 5)
-        {
-            expl.setText("Case 5 explanation");
-        }
-        else if(bundle.getInt("case") == 6)
-        {
-            expl.setText("Case 6 explanation");
-        }
-        else if(bundle.getInt("case") == 7)
-        {
-            expl.setText("Case 7 explanation");
-        }
-        else if(bundle.getInt("case") == 8)
-        {
-            expl.setText("Case 8 explanation");
-        }
-        else if(bundle.getInt("case") == 9)
-        {
-            expl.setText("Case 9 explanation");
-        }
-        else if(bundle.getInt("case") == 10)
-        {
-            expl.setText("Case 10 explanation");
-        }
         initial_vel.setText(bundle.getString("initial"));
         vel.setText(bundle.getString("velocity"));
         accel.setText(bundle.getString("accel"));
