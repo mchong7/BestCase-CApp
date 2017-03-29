@@ -127,7 +127,6 @@ public class DisplayResults extends AppCompatActivity {
                 if (bundle.getInt("case") == 18) {
                     explanations.setMessage("");
                 }
-                //explanations.setMessage("");
                 explanations.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
