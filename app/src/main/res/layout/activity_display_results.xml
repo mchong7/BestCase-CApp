@@ -100,7 +100,7 @@
 
  <Button
      android:id="@+id/explain"
-     style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
+     style="@android:style/Widget.DeviceDefault.Button.Small"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:layout_below="@+id/displace_num"

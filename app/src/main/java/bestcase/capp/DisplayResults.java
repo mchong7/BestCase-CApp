@@ -36,7 +36,6 @@ public class DisplayResults extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog explanations = new AlertDialog.Builder(DisplayResults.this).create();
                 explanations.setTitle("Explanation of Answers");
-
                 //Unicode characters:
                 //  u00B2 = 2 squared
                 //  u2080 = 0 subscript
@@ -128,7 +127,7 @@ public class DisplayResults extends AppCompatActivity {
                 if (bundle.getInt("case") == 18) {
                     explanations.setMessage("");
                 }
-                explanations.setMessage("");
+                //explanations.setMessage("");
                 explanations.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
