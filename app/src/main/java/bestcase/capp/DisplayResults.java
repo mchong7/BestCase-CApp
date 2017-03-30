@@ -50,7 +50,7 @@ public class DisplayResults extends AppCompatActivity {
                 if (bundle.getInt("case") == 1) {
                     explanations.setMessage("The given values are initial velocity, acceleration, and displacement. " +
                             "We're looking for velocity and time values. However, our process is made easy because acceleration is 0." +
-                    System.lineSeparator() + System.lineSeparator() + "If acceleration is zero, we cannot possible have moved faster from our initial speed" +
+                    System.lineSeparator() + System.lineSeparator() + "If acceleration is zero, we cannot possible have moved faster or slower from our initial speed" +
                             "to our final speed. Therefore, final velocity must be equal to initial velocity." + System.lineSeparator() + System.lineSeparator() +
                     "Final Velocity = Initial Velocity = " + bundle.getString("i") + System.lineSeparator() + System.lineSeparator() +
                     "From there, it's a piece of cake." + System.lineSeparator() + "We use one of the five equations: " + System.lineSeparator() + System.lineSeparator() +
@@ -65,7 +65,7 @@ public class DisplayResults extends AppCompatActivity {
                 else if (bundle.getInt("case") == 2) {
                     explanations.setMessage("The given values are initial velocity, acceleration, and displacement. " +
                             "We're looking for velocity and time values, and we're going to use the following equations to solve for them." +
-                            System.lineSeparator() + System.lineSeparator() + "It's important to note that both positive and negative values are possible" +
+                            System.lineSeparator() + System.lineSeparator() + "It's important to note that both positive and negative values are possible " +
                                     "for this set of solutions, hence the plus minus sign." +
                             System.lineSeparator() + System.lineSeparator() + "v\u00B2 = v\u2080\u00B2 + 2a\u0394x" + System.lineSeparator() +
                             "v = v\u2080 + at" + System.lineSeparator() + System.lineSeparator() + "From these equations, we can derive the following to solve " +
@@ -80,23 +80,66 @@ public class DisplayResults extends AppCompatActivity {
                 }
                 //Case 2.a
                 else if (bundle.getInt("case") == 3) {
-                    explanations.setMessage("");
+                    explanations.setMessage("The given values are final velocity, acceleration, and displacement. " +
+                            "We're looking for initial velocity and time values." + System.lineSeparator() + System.lineSeparator()
+                            + "This case is easy. In this case, all the given inputs are 0. What does this mean?" + System.lineSeparator() + System.lineSeparator() +
+                    "Well, this means that our object is not moving right now (zero velocity). It also means it never moved faster or slower to start with (zero acceleration)." +
+                            "Additionally, our object moved zero distance (zero displacement). If we aren't moving and didn't move, our initial velocity is going to be zero too." +
+                            System.lineSeparator() + System.lineSeparator() + "However, our time could be any number, because our object is completely stationary - it's not moving." +
+                            "It could have been stationary for zero seconds or ten million years - we can't determine that information, " +
+                            "because no matter what value time is, the rest of the variables remain the same. Therefore, time is arbitrary and all other values are 0.");
                 }
                 //Case 2.c
                 else if (bundle.getInt("case") == 4) {
-                    explanations.setMessage("");
+                    explanations.setMessage("The given values are final velocity, acceleration, and displacement. " +
+                            "We're looking for initial velocity and time values. However, our process is made easy because acceleration is 0." +
+                            System.lineSeparator() + System.lineSeparator() + "If acceleration is zero, we cannot possible have moved faster or slower than our final speed. " +
+                            "Therefore, final velocity must be equal to initial velocity." + System.lineSeparator() + System.lineSeparator() +
+                            "Initial Velocity = Final Velocity = " + bundle.getString("v") + System.lineSeparator() + System.lineSeparator() +
+                            "From there, it's really quite simple." + System.lineSeparator() + "We use one of the five equations: " + System.lineSeparator() + System.lineSeparator() +
+                            "\u0394x = \u00B9/\u2082(v + v\u2080)t" + System.lineSeparator() + System.lineSeparator() + "Initial and final velocities are equal, " +
+                            "so we end up with 2v or 2v\u2080, it doesn't matter, since they're equal." + System.lineSeparator() + "\u00B9/\u2082 and 2 straight up cancel. So now we have:" +
+                            System.lineSeparator() + System.lineSeparator() + "\u0394x = vt" + System.lineSeparator() + System.lineSeparator() +
+                            "If we just divide both side by velocity, we get: t = v\u0394x" + System.lineSeparator() + "Both velocity and displacement are known values, " +
+                            "so we just fill in the blanks and solve for the final variable." + System.lineSeparator() + System.lineSeparator() +
+                            "t = (" + bundle.getString("v") + ")(" + bundle.getString("d") + ") = " + bundle.getString("t") + System.lineSeparator());
                 }
                 //Case 2.e
                 else if (bundle.getInt("case") == 5) {
-                    explanations.setMessage("");
+                    explanations.setMessage("The given values are final velocity, acceleration, and displacement. " +
+                            "We're looking for initial velocity and time values, and we're going to use the following equations to solve for them." +
+                            System.lineSeparator() + System.lineSeparator() + "It's important to note that both positive and negative values are possible " +
+                            "for this set of solutions, hence the plus minus sign." +
+                            System.lineSeparator() + System.lineSeparator() + "v\u00B2 = v\u2080\u00B2 + 2a\u0394x" + System.lineSeparator() +
+                            "v = v\u2080 + at" + System.lineSeparator() + System.lineSeparator() + "From these equations, we can derive the following to solve " +
+                            "for our missing variables." + System.lineSeparator() + System.lineSeparator() + "v\u2080 = \u00B1\u221A(v\u00B2) + 2a\u0394x +" +
+                            System.lineSeparator() + "t = \u00B1(v - v\u2080)/a" + System.lineSeparator() + System.lineSeparator() +
+                            "If we fill in the known values for these equations, we get: " +
+                            System.lineSeparator() + System.lineSeparator() + "v\u2080 = \u00B1\u221A(" + bundle.getString("v") + ")\u00B2 - 2(" +
+                            bundle.getString("a") + ")(" + bundle.getString("d") + ") = \u00B1" + bundle.getString("i") + System.lineSeparator() + System.lineSeparator() +
+                            "Once we have the value of initial velocity, we can get the value for time easily:" + System.lineSeparator() + System.lineSeparator() +
+                            "t = \u221A((" + bundle.getString("v") + ") - (" + bundle.getString("i") + "))/(" + bundle.getString("a") +
+                            ") = \u00B1" + bundle.getString("t") + System.lineSeparator());
                 }
                 //Case 3.a
                 else if (bundle.getInt("case") == 6) {
-                    explanations.setMessage("");
+                    explanations.setMessage("The given values are initial velocity, final velocity, and displacement. " +
+                            "We're looking for acceleration and time values." + System.lineSeparator() + System.lineSeparator() +
+                            "This case is easy. In this case, all the given inputs are 0. What does this mean?" + System.lineSeparator() + System.lineSeparator() +
+                            "Well, this means that our object started off by not moving (zero initial velocity). It also means it is still not moving (zero final velocity)." +
+                            "Additionally, our object moved zero distance (zero displacement). If we aren't moving and didn't move, our acceleration is zero." +
+                            System.lineSeparator() + System.lineSeparator() + "However, our time could be any number, because our object is completely stationary - it's not moving." +
+                            "It could have been stationary for zero seconds or ten million years - we can't determine that information, " +
+                            "because no matter what value time is, the rest of the variables remain the same. Therefore, time is arbitrary and all other values are 0.");
                 }
                 //Case 3.b
                 else if (bundle.getInt("case") == 7) {
-                    explanations.setMessage("");
+                    explanations.setMessage("The given values are initial velocity, final velocity, and displacement. " +
+                            "We're looking for acceleration and time values." + System.lineSeparator() + System.lineSeparator() +
+                            "In this case, our object didn't move (zero displacement), but it is still moving, because we defined nonzero (and equal) values " +
+                            "for initial and final velocities." + System.lineSeparator() + System.lineSeparator() +
+                            "This is not a paradox - we simply have to say that no time passed. That is, initial and final velocity occured in the same instant." +
+                            "However, it's not possible to determine acceleration, since it has to occur in a given amount of time. Therefore, acceleration is arbitrary." + System.lineSeparator());
                 }
                 //Case 3.e
                 else if (bundle.getInt("case") == 8) {

@@ -435,7 +435,7 @@ public class DataInput extends AppCompatActivity {
                             if (a == 0.0) {
                                 if ((vel == 0.0) && (dx == 0.0)) {
                                     v0 = 0.0;
-                                    dt = 0.0;
+                                    dt = 0.0;   //Arbitrary value
                                     Case = 3;
                                 } else if ((vel == 0.0) && (dx != 0.0)) {
                                     error = "The values given are not possible, because an object cannot move if it has no acceleration and no velocity." +
