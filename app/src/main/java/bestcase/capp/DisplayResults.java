@@ -36,96 +36,114 @@ public class DisplayResults extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog explanations = new AlertDialog.Builder(DisplayResults.this).create();
                 explanations.setTitle("Explanation of Answers");
+
                 //Unicode characters:
                 //  u00B2 = 2 squared
                 //  u2080 = 0 subscript
                 //  u0394 = delta
                 //  u00B1 = plus minus sign
                 //  u221A = square root
+                //  u00B9 = 1 superscript (for fractions)
+                //  u2082 = 2 subscript (for fractions)
 
                 //Case 1.a
                 if (bundle.getInt("case") == 1) {
                     explanations.setMessage("The given values are initial velocity, acceleration, and displacement. " +
-                            "We're looking for velocity and time values, and we're going to use the following equations to solve for them." +
-                            System.lineSeparator() + System.lineSeparator() + "v\u00B2 = v\u2080\u00B2 + 2a\u0394x" + System.lineSeparator() +
-                            "v = v\u2080 + at" + System.lineSeparator() + System.lineSeparator() + "From these equations, we can derive the following to solve" +
-                            "for our missing variables." + System.lineSeparator() + System.lineSeparator() + "v = \u00B1\u221Av\u2080\u00B2 + 2a\u0394x +" +
-                            System.lineSeparator() + "t = \u00B1(v - v\u2080)/a" + System.lineSeparator() + System.lineSeparator() +
-                            "If we fill in the known values for these equations, we get: " +
-                            System.lineSeparator() + System.lineSeparator() + "v = \u00B1\u221A(" + bundle.getString("initial") + ")\u00B2 + 2(" +
-                            bundle.getString("accel") + ")(" + bundle.getString("disp") + ") = \u00B1" + bundle.getString("velocity") + System.lineSeparator() + System.lineSeparator() +
-                            "Once we have the value of velocity, we can get the value for time easily:" + System.lineSeparator() + System.lineSeparator() +
-                            "t = \u221A((" + bundle.getString("velocity") + ") - (" + bundle.getString("initial") + "))/(" + bundle.getString("accel") +
-                            ") = \u00B1" + bundle.getString("time") + System.lineSeparator());
-
+                            "We're looking for velocity and time values. However, our process is made easy because acceleration is 0." +
+                    System.lineSeparator() + System.lineSeparator() + "If acceleration is zero, we cannot possible have moved faster from our initial speed" +
+                            "to our final speed. Therefore, final velocity must be equal to initial velocity." + System.lineSeparator() + System.lineSeparator() +
+                    "Final Velocity = Initial Velocity = " + bundle.getString("i") + System.lineSeparator() + System.lineSeparator() +
+                    "From there, it's a piece of cake." + System.lineSeparator() + "We use one of the five equations: " + System.lineSeparator() + System.lineSeparator() +
+                    "\u0394x = \u00B9/\u2082(v + v\u2080)t" + System.lineSeparator() + System.lineSeparator() + "Initial and final velocities are equal, " +
+                            "so we end up with 2v or 2v\u2080, it doesn't matter, since they're equal." + System.lineSeparator() + "\u00B9/\u2082 and 2 straight up cancel. So now we have:" +
+                    System.lineSeparator() + System.lineSeparator() + "\u0394x = vt" + System.lineSeparator() + System.lineSeparator() +
+                    "If we just divide both side by velocity, we get: t = v\u0394x" + System.lineSeparator() + "Both velocity and displacement are known values, " +
+                            "so we just fill in the blanks and solve for the final variable." + System.lineSeparator() + System.lineSeparator() +
+                    "t = (" + bundle.getString("v") + ")(" + bundle.getString("d") + ") = " + bundle.getString("t") + System.lineSeparator());
                 }
                 //Case 1.c
-                if (bundle.getInt("case") == 2) {
-                    explanations.setMessage("");
+                else if (bundle.getInt("case") == 2) {
+                    explanations.setMessage("The given values are initial velocity, acceleration, and displacement. " +
+                            "We're looking for velocity and time values, and we're going to use the following equations to solve for them." +
+                            System.lineSeparator() + System.lineSeparator() + "It's important to note that both positive and negative values are possible" +
+                                    "for this set of solutions, hence the plus minus sign." +
+                            System.lineSeparator() + System.lineSeparator() + "v\u00B2 = v\u2080\u00B2 + 2a\u0394x" + System.lineSeparator() +
+                            "v = v\u2080 + at" + System.lineSeparator() + System.lineSeparator() + "From these equations, we can derive the following to solve " +
+                            "for our missing variables." + System.lineSeparator() + System.lineSeparator() + "v = \u00B1\u221A(v\u2080\u00B2) + 2a\u0394x +" +
+                            System.lineSeparator() + "t = \u00B1(v - v\u2080)/a" + System.lineSeparator() + System.lineSeparator() +
+                            "If we fill in the known values for these equations, we get: " +
+                            System.lineSeparator() + System.lineSeparator() + "v = \u00B1\u221A(" + bundle.getString("i") + ")\u00B2 + 2(" +
+                            bundle.getString("a") + ")(" + bundle.getString("d") + ") = \u00B1" + bundle.getString("v") + System.lineSeparator() + System.lineSeparator() +
+                            "Once we have the value of velocity, we can get the value for time easily:" + System.lineSeparator() + System.lineSeparator() +
+                            "t = \u221A((" + bundle.getString("v") + ") - (" + bundle.getString("i") + "))/(" + bundle.getString("a") +
+                            ") = \u00B1" + bundle.getString("t") + System.lineSeparator());
                 }
                 //Case 2.a
-                if (bundle.getInt("case") == 3) {
+                else if (bundle.getInt("case") == 3) {
                     explanations.setMessage("");
                 }
                 //Case 2.c
-                if (bundle.getInt("case") == 4) {
+                else if (bundle.getInt("case") == 4) {
                     explanations.setMessage("");
                 }
                 //Case 2.e
-                if (bundle.getInt("case") == 5) {
+                else if (bundle.getInt("case") == 5) {
                     explanations.setMessage("");
                 }
                 //Case 3.a
-                if (bundle.getInt("case") == 6) {
+                else if (bundle.getInt("case") == 6) {
                     explanations.setMessage("");
                 }
                 //Case 3.b
-                if (bundle.getInt("case") == 7) {
+                else if (bundle.getInt("case") == 7) {
                     explanations.setMessage("");
                 }
                 //Case 3.e
-                if (bundle.getInt("case") == 8) {
+                else if (bundle.getInt("case") == 8) {
                     explanations.setMessage("");
                 }
                 //Case 3.f
-                if (bundle.getInt("case") == 9) {
+                else if (bundle.getInt("case") == 9) {
                     explanations.setMessage("");
                 }
                 //Case 4.c
-                if (bundle.getInt("case") == 10) {
+                else if (bundle.getInt("case") == 10) {
                     explanations.setMessage("");
                 }
                 //Case 5.c
-                if (bundle.getInt("case") == 11) {
+                else if (bundle.getInt("case") == 11) {
                     explanations.setMessage("");
                 }
                 //Case 6.a
-                if (bundle.getInt("case") == 12) {
+                else if (bundle.getInt("case") == 12) {
                     explanations.setMessage("");
                 }
                 //Case 7.a
-                if (bundle.getInt("case") == 13) {
+                else if (bundle.getInt("case") == 13) {
                     explanations.setMessage("");
                 }
                 //Case 8.a
-                if (bundle.getInt("case") == 14) {
+                else if (bundle.getInt("case") == 14) {
                     explanations.setMessage("");
                 }
                 //Case 8.c
-                if (bundle.getInt("case") == 15) {
+                else if (bundle.getInt("case") == 15) {
                     explanations.setMessage("");
                 }
                 //Case 9.c
-                if (bundle.getInt("case") == 16) {
+                else if (bundle.getInt("case") == 16) {
                     explanations.setMessage("");
                 }
                 //Case 10.a
-                if (bundle.getInt("case") == 17) {
+                else if (bundle.getInt("case") == 17) {
                     explanations.setMessage("");
                 }
                 //Case 10.c
-                if (bundle.getInt("case") == 18) {
+                else if (bundle.getInt("case") == 18) {
                     explanations.setMessage("");
+                }
+                else {
+                    explanations.setMessage("The mathematical procedure is not recognized.");
                 }
                 explanations.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
