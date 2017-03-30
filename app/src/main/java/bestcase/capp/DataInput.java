@@ -617,12 +617,18 @@ public class DataInput extends AppCompatActivity {
                     // output all the variables and corresponding explanation
                     if (error.equals("")) {
                         if (Case == 2) {
-                            bundle.putString("time", "Time: \u00B1" + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
+                            bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s"); // user
                             bundle.putString("velocity", "Final Velocity: \u00B1" + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("accel", "Acceleration: " + String.valueOf(BigDecimal.valueOf(a).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s\u00B2"); //user
+                            bundle.putString("time", "Time: \u00B1" + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
+                            bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m"); // user
                         }
                         else if (Case == 5) {
-                            bundle.putString("time", "Time: \u00B1" + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
                             bundle.putString("initial", "Initial Velocity: \u00B1" + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("velocity", "Final Velocity: " + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s"); // user
+                            bundle.putString("accel", "Acceleration: " + String.valueOf(BigDecimal.valueOf(a).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s\u00B2"); // user
+                            bundle.putString("time", "Time: \u00B1" + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
+                            bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m"); // user
                         }
                         else {
                             bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
