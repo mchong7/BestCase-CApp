@@ -10,18 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91ff80e3-390a-4d0b-afd2-3455e61fa941" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/resultspage.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/bestcase/capp/DataInput.java" afterPath="$PROJECT_DIR$/app/src/main/java/bestcase/capp/DataInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/bestcase/capp/DisplayResults.java" afterPath="$PROJECT_DIR$/app/src/main/java/bestcase/capp/DisplayResults.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/bestcase/capp/SplashPage.java" afterPath="$PROJECT_DIR$/app/src/main/java/bestcase/capp/SplashPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_data_input.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_data_input.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_display_results.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_display_results.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
     </list>
     <ignored path="BestCase-CApp-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,15 +77,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="menu.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2">
+          <provider editor-type-id="android-designer2">
             <state />
           </provider>
         </entry>
@@ -140,7 +130,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_data_input.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_data_input.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_data_input.xml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="1316">
@@ -1786,6 +1776,20 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BestCase-CApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -1793,7 +1797,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.File Status" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="device.picker.selection" value="Nexus_5" />
@@ -2242,7 +2246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490821322649</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Made the following changes: added a new resource item which contains the code for the menu in the action bar, added a back button in the action bar for the results page, hid the action bar in the splash page, and made minor changes to some of the xml files.">
+      <created>1490962046193</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1490962046193</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2305,7 +2316,8 @@
     <MESSAGE value="Changed layout of input TextEdits in activity_data_input.xml" />
     <MESSAGE value="Fixed a couple of bugs" />
     <MESSAGE value="Fixed alert dialog not displaying message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed alert dialog not displaying message" />
+    <MESSAGE value="Made the following changes: added a new resource item which contains the code for the menu in the action bar, added a back button in the action bar for the results page, hid the action bar in the splash page, and made minor changes to some of the xml files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made the following changes: added a new resource item which contains the code for the menu in the action bar, added a back button in the action bar for the results page, hid the action bar in the splash page, and made minor changes to some of the xml files." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2602,17 +2614,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/bestcase/capp/SplashPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
@@ -2700,6 +2701,17 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
