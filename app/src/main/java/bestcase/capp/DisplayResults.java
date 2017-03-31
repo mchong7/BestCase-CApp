@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.Display;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -18,12 +19,22 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 import java.awt.font.TextAttribute;
 import java.text.AttributedString;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 public class DisplayResults extends AppCompatActivity {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_results);
-        Button b = (Button) findViewById(R.id.back);
+        // enable the back button in the app bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         Button explain = (Button) findViewById(R.id.explain);
         final Bundle bundle = getIntent().getExtras();
         TextView initial_vel = (TextView) findViewById(R.id.velocity_0_num);
@@ -204,13 +215,5 @@ public class DisplayResults extends AppCompatActivity {
         accel.setText(bundle.getString("accel"));
         time.setText(bundle.getString("time"));
         disp.setText(bundle.getString("disp"));
-        b.setOnClickListener(new View.OnClickListener()
-                             {
-                                 public void onClick(View view) {
-                     Intent i = new Intent(DisplayResults.this, DataInput.class);
-                     startActivity(i);
-                 }
-             }
-        );
     }
 }

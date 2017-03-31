@@ -8,28 +8,27 @@
         android:label="CApp Physics Helper"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashPage" android:screenOrientation="portrait">
 
-            <!-- android:label="@string/CApp"> -->
+        <activity android:name=".SplashPage"
+           android:screenOrientation="portrait"
+           android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DataInput" android:screenOrientation="portrait">
 
-            <!-- android:label="@string/CApp"> -->
+        <activity android:name=".DataInput" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAINLAUNCHER" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".DisplayResults" android:screenOrientation="portrait">
 
-
+        <activity android:name=".DisplayResults"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".DataInput">
         </activity>
-    </application>
 
+    </application>
 </manifest>

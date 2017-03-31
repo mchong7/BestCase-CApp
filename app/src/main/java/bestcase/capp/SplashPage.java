@@ -14,6 +14,7 @@ public class SplashPage extends DataInput{
     protected void onCreate(Bundle savedInstanceState){
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.splash);
 
         Thread timerThread = new Thread(){

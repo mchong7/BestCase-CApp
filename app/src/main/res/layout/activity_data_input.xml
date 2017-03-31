@@ -110,6 +110,7 @@
         android:layout_alignTop="@+id/clear_button"
         android:layout_toEndOf="@+id/displace"
         android:elevation="0dp"
+        android:contentDescription="@string/help_button"
         app:srcCompat="@android:drawable/ic_menu_help"
         android:layout_alignBottom="@+id/clear_button" />
 

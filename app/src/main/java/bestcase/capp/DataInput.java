@@ -14,6 +14,7 @@ import java.text.AttributedString;
 import static java.lang.Math.*;
 // import java.io.*;
 import android.text.Html;
+import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -35,24 +36,6 @@ public class DataInput extends AppCompatActivity {
     private boolean isEmpty(EditText etText) {
         return etText.getText().toString().trim().length() == 0;
     }
-    public class ViewDialog {
-        public void showDialog(Activity activity, String msg) {
-            final Dialog dialog = new Dialog(activity);
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            dialog.setCancelable(false);
-            dialog.setContentView(R.layout.resultspage);
-            TextView text = (TextView) dialog.findViewById(R.id.txt_dia);
-            text.setText(msg);
-            Button dialogButton = (Button) dialog.findViewById(R.id.btn_ok);
-            dialogButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog.dismiss();
-                }
-            });
-            dialog.show();
-        }
-    }
     EditText text_initial_vel;
     EditText text_final_vel;
     EditText text_accel;
@@ -60,12 +43,19 @@ public class DataInput extends AppCompatActivity {
     EditText text_disp;
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_input);
         Button solve = (Button) findViewById(R.id.solve_button);
         Button clear = (Button) findViewById(R.id.clear_button);
         ImageButton help = (ImageButton) findViewById(R.id.imageButton);
+
+        if (help != null)
         help.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 AlertDialog about = new AlertDialog.Builder(DataInput.this).create();
