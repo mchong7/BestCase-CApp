@@ -1,3 +1,4 @@
+//Use ^[\r?$\r?\n] in the search and replace bar to get rid of whitespace lines
 package bestcase.capp;
 import android.app.Activity;
 import android.app.Dialog;
@@ -54,28 +55,27 @@ public class DataInput extends AppCompatActivity {
         Button solve = (Button) findViewById(R.id.solve_button);
         Button clear = (Button) findViewById(R.id.clear_button);
         ImageButton help = (ImageButton) findViewById(R.id.imageButton);
-
         if (help != null)
-        help.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                AlertDialog about = new AlertDialog.Builder(DataInput.this).create();
-                about.setTitle("How to use the Data Input Page");
-                about.setMessage("Fill in boxes with appropriate values. " + System.lineSeparator() + "You may only fill in three boxes." + System.lineSeparator() + System.lineSeparator() +
-                        "The app will, based on your inputs, output values for all five values." + System.lineSeparator() + System.lineSeparator() + "Press the solve button once you're done, " +
-                        "or press the clear button to reset your inputs." + System.lineSeparator() + System.lineSeparator() + "Units for each variable are as follows: "
-                        + System.lineSeparator() + "Velocity (initial and final): meters per second" + System.lineSeparator() + "Acceleration: meters per second squared"
-                        + System.lineSeparator() + "Time: Seconds" + System.lineSeparator() + "Displacement: Meters" + System.lineSeparator());
-                about.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                about.show();
-                Button aboutOkButton = about.getButton(AlertDialog.BUTTON_NEUTRAL);
-                aboutOkButton.setBackgroundColor(Color.rgb(214, 215, 215));
-                aboutOkButton.setTextColor(Color.BLACK);
-            }
-        });
+            help.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    AlertDialog about = new AlertDialog.Builder(DataInput.this).create();
+                    about.setTitle("How to use the Data Input Page");
+                    about.setMessage("Fill in boxes with appropriate values. " + System.lineSeparator() + "You may only fill in three boxes." + System.lineSeparator() + System.lineSeparator() +
+                            "The app will, based on your inputs, output values for all five values." + System.lineSeparator() + System.lineSeparator() + "Press the solve button once you're done, " +
+                            "or press the clear button to reset your inputs." + System.lineSeparator() + System.lineSeparator() + "Units for each variable are as follows: "
+                            + System.lineSeparator() + "Velocity (initial and final): meters per second" + System.lineSeparator() + "Acceleration: meters per second squared"
+                            + System.lineSeparator() + "Time: Seconds" + System.lineSeparator() + "Displacement: Meters" + System.lineSeparator());
+                    about.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    about.show();
+                    Button aboutOkButton = about.getButton(AlertDialog.BUTTON_NEUTRAL);
+                    aboutOkButton.setBackgroundColor(Color.rgb(214, 215, 215));
+                    aboutOkButton.setTextColor(Color.BLACK);
+                }
+            });
         if (solve != null)
             solve.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -438,7 +438,7 @@ public class DataInput extends AppCompatActivity {
                             } else {
                                 if (vel * vel - 2 * a * dx < 0) {
                                     error = "The combination of input variables results in the square root of a negative number. " +
-                                            "Please change the acceleration and/or displacement values.";
+                                            "Please change the acceleration and/or displacement values to be smaller numbers.";
                                 } else {
                                     v0 = sqrt(vel * vel - 2 * a * dx);
                                     v02 = -(sqrt(vel * vel - 2 * a * dx));  //Input values result in a possible inverse result
@@ -458,7 +458,7 @@ public class DataInput extends AppCompatActivity {
                                         a = 0.0;
                                         dt = 0.0;    //arbitrary since object is stationary
                                         Case = 6;
-                                    } else    //velocity and initial velocity are nonzero (object is moving)
+                                    } else    //velocity and initial velocity are nonzero and equal (object is moving)
                                     {
                                         a = 0.0; // a can be anything
                                         dt = 0.0;   //no displacement but object is moving, therefore time must be zero
@@ -549,7 +549,7 @@ public class DataInput extends AppCompatActivity {
                                             "Change the value of time to be nonzero, or make displacement zero.";
                                 }
                             } else {
-                                a = 2 / (dt * dt) * (dx - v0 * dt);
+                                a = (2 * (dx - v0 * dt))/(dt * dt);
                                 vel = v0 + a * dt;
                                 Case = 16;
                             }
@@ -581,6 +581,7 @@ public class DataInput extends AppCompatActivity {
                                 if (dx == 0.0) {
                                     a = 0.0; // a can be anything
                                     v0 = vel;
+                                    Case = 18;
                                     //error = "Initial velocity and acceleration cannot be found if time and displacement are equal to zero.";
                                 } else {
                                     error = "The given values imply infinite acceleration, since there was a displacement in zero time." +
@@ -589,7 +590,7 @@ public class DataInput extends AppCompatActivity {
                             } else {
                                 a = 2.0 / (dt * dt) * (vel * dt - dx);
                                 v0 = vel - a * dt;
-                                Case = 18;
+                                Case = 19;
                             }
                         }
                         // end of code segment for case 10
@@ -602,7 +603,7 @@ public class DataInput extends AppCompatActivity {
                     // this else condition is met if an invalid number of variables are trying to be solved
                     else
                     {
-                        error = "An invalid number of unknown variables are trying to be solved. Make sure you are solving for 2 unknown variables.";
+                        error = "An invalid number of unknown variables are trying to be solved. You need to input 3 values - no more, no less.";
                     }
                     // output all the variables and corresponding explanation
                     if (error.equals("")) {
@@ -613,12 +614,54 @@ public class DataInput extends AppCompatActivity {
                             bundle.putString("time", "Time: \u00B1" + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
                             bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m"); // user
                         }
+                        else if (Case == 3) {
+                            bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s"); // user
+                            bundle.putString("velocity", "Final Velocity: " + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("accel", "Acceleration: " + String.valueOf(BigDecimal.valueOf(a).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s\u00B2"); //user
+                            bundle.putString("time", "Time: Arbitrary");
+                            bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m"); // user
+                        }
                         else if (Case == 5) {
                             bundle.putString("initial", "Initial Velocity: \u00B1" + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
                             bundle.putString("velocity", "Final Velocity: " + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s"); // user
                             bundle.putString("accel", "Acceleration: " + String.valueOf(BigDecimal.valueOf(a).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s\u00B2"); // user
                             bundle.putString("time", "Time: \u00B1" + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
                             bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m"); // user
+                        }
+                        else if (Case == 6) {
+                            bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s"); // user
+                            bundle.putString("velocity", "Final Velocity: " + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("accel", "Acceleration: " + String.valueOf(BigDecimal.valueOf(a).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s\u00B2"); //user
+                            bundle.putString("time", "Time: Arbitrary");
+                            bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m"); // user
+                        }
+                        else if (Case == 7){
+                            bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("velocity", "Final Velocity: " + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("accel", "Acceleration: Arbitrary");
+                            bundle.putString("time", "Time: " + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
+                            bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m");
+                        }
+                        else if (Case == 11){
+                            bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("velocity", "Final Velocity: " + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("accel", "Acceleration: Arbitrary");
+                            bundle.putString("time", "Time: " + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
+                            bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m");
+                        }
+                        else if (Case == 15){
+                            bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("velocity", "Final Velocity: " + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("accel", "Acceleration: Arbitrary");
+                            bundle.putString("time", "Time: " + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
+                            bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m");
+                        }
+                        else if (Case == 18){
+                            bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("velocity", "Final Velocity: " + String.valueOf(BigDecimal.valueOf(vel).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
+                            bundle.putString("accel", "Acceleration: Arbitrary");
+                            bundle.putString("time", "Time: " + String.valueOf(BigDecimal.valueOf(dt).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " s");
+                            bundle.putString("disp", "Displacement: " + String.valueOf(BigDecimal.valueOf(dx).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m");
                         }
                         else {
                             bundle.putString("initial", "Initial Velocity: " + String.valueOf(BigDecimal.valueOf(v0).setScale(5, RoundingMode.HALF_UP).doubleValue()) + " m/s");
