@@ -6,14 +6,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="bestcase.capp.instructions">
+    tools:context="bestcase.capp.Instructions">
 
     <Button
         android:id="@+id/doit"
-        style="@style/Widget.AppCompat.Button.Borderless"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get started >"
+        android:text="@string/get_started"
         tools:layout_editor_absoluteX="232dp"
         tools:layout_editor_absoluteY="447dp"
         android:layout_alignParentBottom="true"
@@ -23,7 +23,7 @@
         android:id="@+id/top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Instructions"
+        android:text="@string/instructions"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -32,7 +32,7 @@
         android:id="@+id/instruct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="instruct"
+        android:text="@string/instruct"
         android:scrollbars="vertical"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         tools:layout_editor_absoluteX="16dp"

@@ -11,7 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
-import bestcase.capp.CApp.WelcomeActivity;
+import bestcase.capp.WelcomeActivity;
 
 public class SplashPage extends DataInput{
     SharedPreferences mPrefs;

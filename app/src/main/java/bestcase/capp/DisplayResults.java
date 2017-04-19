@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.Display;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -22,9 +23,31 @@ import java.text.AttributedString;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 public class DisplayResults extends AppCompatActivity {
+    // creates the menu in the action bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    // enables page navigation in the menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.menu_about:
+                Intent about = new Intent(DisplayResults.this, About.class);
+                startActivity(about);
+                break;
+            case R.id.menu_instructions:
+                Intent instructions = new Intent(DisplayResults.this, MenuInstructions.class);
+                startActivity(instructions);
+                break;
+            case R.id.menu_settings:
+                Intent settings = new Intent(DisplayResults.this, Settings.class);
+                startActivity(settings);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
         return true;
     }
     @Override

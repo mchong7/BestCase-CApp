@@ -16,6 +16,7 @@ import static java.lang.Math.*;
 // import java.io.*;
 import android.text.Html;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -43,9 +44,31 @@ public class DataInput extends AppCompatActivity {
     EditText text_time;
     EditText text_disp;
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+    // creates the menu in the action bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    // enables page navigation in the menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.menu_about:
+                Intent about = new Intent(DataInput.this, About.class);
+                startActivity(about);
+                break;
+            case R.id.menu_instructions:
+                Intent instructions = new Intent(DataInput.this, MenuInstructions.class);
+                startActivity(instructions);
+                break;
+            case R.id.menu_settings:
+                Intent settings = new Intent(DataInput.this, Settings.class);
+                startActivity(settings);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
         return true;
     }
     @Override
@@ -63,8 +86,9 @@ public class DataInput extends AppCompatActivity {
                     about.setMessage("Fill in boxes with appropriate values. " + System.lineSeparator() + "You may only fill in three boxes." + System.lineSeparator() + System.lineSeparator() +
                             "The app will, based on your inputs, output values for all five values." + System.lineSeparator() + System.lineSeparator() + "Press the solve button once you're done, " +
                             "or press the clear button to reset your inputs." + System.lineSeparator() + System.lineSeparator() + "Units for each variable are as follows: "
-                            + System.lineSeparator() + "Velocity (initial and final): meters per second" + System.lineSeparator() + "Acceleration: meters per second squared"
-                            + System.lineSeparator() + "Time: Seconds" + System.lineSeparator() + "Displacement: Meters" + System.lineSeparator());
+                            + System.lineSeparator() + System.lineSeparator() + "Velocity (initial and final): meters per second" + System.lineSeparator() + System.lineSeparator()
+                            + "Acceleration: meters per second squared" + System.lineSeparator() + System.lineSeparator() + "Time: Seconds" + System.lineSeparator() +
+                            System.lineSeparator() + "Displacement: Meters" + System.lineSeparator());
                     about.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
