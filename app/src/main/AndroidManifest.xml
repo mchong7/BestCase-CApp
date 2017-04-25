@@ -73,7 +73,10 @@
         android:label="@string/BestCase-CApp"
         android:theme="@style/AppTheme" >
 
-
+        <activity
+            android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|
+            screenSize|smallestScreenSize"></activity>
 
     </application>
 </manifest>
