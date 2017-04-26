@@ -67,12 +67,6 @@
             android:parentActivityName=".DataInput"
             android:screenOrientation="portrait" />
 
-        android:name=".MyApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/app_icon"
-        android:label="@string/BestCase-CApp"
-        android:theme="@style/AppTheme" >
-
         <activity
             android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|
