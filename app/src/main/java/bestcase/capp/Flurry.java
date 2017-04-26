@@ -2,6 +2,8 @@ package bestcase.capp;
 
 import android.app.Application;
 
+import com.flurry.android.FlurryAgent;
+
 /**
  * Created by Matt on 4/24/2017.
  */
