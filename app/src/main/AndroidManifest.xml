@@ -67,10 +67,10 @@
             android:parentActivityName=".DataInput"
             android:screenOrientation="portrait" />
 
-        <activity
+        <!--<activity
             android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|
-            screenSize|smallestScreenSize"></activity>
+            screenSize|smallestScreenSize"></activity>-->
 
     </application>
 </manifest>

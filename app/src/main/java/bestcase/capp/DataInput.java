@@ -33,6 +33,7 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import com.flurry.android.FlurryAgent;
 import android.content.Intent;
 public class DataInput extends AppCompatActivity {
     private boolean isEmpty(EditText etText) {
@@ -621,6 +622,7 @@ public class DataInput extends AppCompatActivity {
                         // this occurs if the users input doesn't relate to a specific case
                         else {
                             error = "Invalid case specified.";
+                            FlurryAgent.logEvent("Error: Invalid Case");
                         }
                         // END BINDER ALGORITHM
                     }
@@ -628,6 +630,7 @@ public class DataInput extends AppCompatActivity {
                     else
                     {
                         error = "An invalid number of unknown variables are trying to be solved. You need to input 3 values - no more, no less.";
+                        FlurryAgent.logEvent("Error: Invalid number of unknown variables");
                     }
                     // output all the variables and corresponding explanation
                     if (error.equals("")) {
