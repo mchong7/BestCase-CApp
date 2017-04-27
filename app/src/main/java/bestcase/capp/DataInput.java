@@ -622,7 +622,7 @@ public class DataInput extends AppCompatActivity {
                         // this occurs if the users input doesn't relate to a specific case
                         else {
                             error = "Invalid case specified.";
-                            FlurryAgent.logEvent("Error: Invalid Case");
+                            //FlurryAgent.logEvent("Error: Invalid Case");
                         }
                         // END BINDER ALGORITHM
                     }
@@ -630,7 +630,7 @@ public class DataInput extends AppCompatActivity {
                     else
                     {
                         error = "An invalid number of unknown variables are trying to be solved. You need to input 3 values - no more, no less.";
-                        FlurryAgent.logEvent("Error: Invalid number of unknown variables");
+                        //FlurryAgent.logEvent("Error: Invalid number of unknown variables");
                     }
                     // output all the variables and corresponding explanation
                     if (error.equals("")) {
@@ -711,6 +711,7 @@ public class DataInput extends AppCompatActivity {
                         AlertDialog errorAlert = new AlertDialog.Builder(DataInput.this).create();
                         errorAlert.setTitle("Error");
                         errorAlert.setMessage(error + System.lineSeparator());
+                        FlurryAgent.logEvent("User error");
                         errorAlert.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
