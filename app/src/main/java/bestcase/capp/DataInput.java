@@ -429,6 +429,7 @@ public class DataInput extends AppCompatActivity {
                             if (a == 0.0) {
                                 vel = v0;
                                 dt = dx / v0;
+                                FlurryAgent.logEvent("Case 1.a");
                             } else {
                                 if (v0 * v0 + 2 * a * dx < 0) {
                                     error = "The combination of input variables results in the square root of a negative number. " +
@@ -439,6 +440,7 @@ public class DataInput extends AppCompatActivity {
                                     dt = (vel - v0) / a;
                                     dt2 = (vel2 - v0) / a;
                                     Case = 2;
+                                    FlurryAgent.logEvent("Case 1.c");
                                 }
                             }
                         }
@@ -452,6 +454,7 @@ public class DataInput extends AppCompatActivity {
                                     v0 = 0.0;
                                     dt = 0.0;   //Arbitrary value
                                     Case = 3;
+                                    FlurryAgent.logEvent("Case 2.a");
                                 } else if ((vel == 0.0) && (dx != 0.0)) {
                                     error = "The values given are not possible, because an object cannot move if it has no acceleration and no velocity." +
                                             "Please change the given values.";
@@ -459,6 +462,7 @@ public class DataInput extends AppCompatActivity {
                                     v0 = vel;
                                     dt = dx / v0;
                                     Case = 4;
+                                    FlurryAgent.logEvent("Case 2.c");
                                 }
                             } else {
                                 if (vel * vel - 2 * a * dx < 0) {
@@ -470,6 +474,7 @@ public class DataInput extends AppCompatActivity {
                                     dt = (vel - v0) / a;
                                     dt2 = (vel - v02) / a;
                                     Case = 5;
+                                    FlurryAgent.logEvent("Case 2.e");
                                 }
                             }
                         }
@@ -483,11 +488,13 @@ public class DataInput extends AppCompatActivity {
                                         a = 0.0;
                                         dt = 0.0;    //arbitrary since object is stationary
                                         Case = 6;
+                                        FlurryAgent.logEvent("Case 3.a");
                                     } else    //velocity and initial velocity are nonzero and equal (object is moving)
                                     {
                                         a = 0.0; // a can be anything
                                         dt = 0.0;   //no displacement but object is moving, therefore time must be zero
                                         Case = 7;
+                                        FlurryAgent.logEvent("Case 3.b");
                                     }
                                 } else if (v0 == -vel) {
                                     error = "There is no possible way to determine acceleration and time since there are infinite combinations of both." +
@@ -500,9 +507,11 @@ public class DataInput extends AppCompatActivity {
                                 if (a == 0.0) {
                                     dt = dx / v0;
                                     Case = 8;
+                                    FlurryAgent.logEvent("Case 3.e");
                                 } else {
                                     dt = (vel - v0) / a;
                                     Case = 9;
+                                    FlurryAgent.logEvent("Case 3.f");
                                 }
                             }
                         }
@@ -523,6 +532,7 @@ public class DataInput extends AppCompatActivity {
                                 dx = (vel * vel - v0 * v0) / (2.0 * a);
                                 dt = (vel - v0) / a;
                                 Case = 10;
+                                FlurryAgent.logEvent("Case 4.c");
                             }
                         }
                         // end of code segment for case 4
@@ -534,6 +544,7 @@ public class DataInput extends AppCompatActivity {
                                     dx = 0.0;
                                     a = 0.0;  // any a works
                                     Case = 11;
+                                    FlurryAgent.logEvent("Case 5.a");
                                 } else {
                                     error = "The given values imply infinite acceleration, since the velocities changed in zero time." +
                                             "Change the value of time to be nonzero, or make velocities equal.";
@@ -542,6 +553,7 @@ public class DataInput extends AppCompatActivity {
                                 a = (vel - v0) / dt;
                                 dx = v0 * dt + 0.5 * a * dt * dt;
                                 Case = 12;
+                                FlurryAgent.logEvent("Case 5.c");
                             }
                         }
                         // end of code segment for case 5
@@ -551,6 +563,7 @@ public class DataInput extends AppCompatActivity {
                             vel = v0 + a * dt;
                             dx = v0 * dt + 0.5 * a * dt * dt;
                             Case = 13;
+                            FlurryAgent.logEvent("Case 6.a");
                         }
                         // end of code segment for case 6
                         // Case 7: solve for initial velocity and displacement
@@ -559,6 +572,7 @@ public class DataInput extends AppCompatActivity {
                             v0 = vel - a * dt;
                             dx = v0 * dt + 0.5 * a * dt * dt;
                             Case = 14;
+                            FlurryAgent.logEvent("Case 7.a");
                         }
                         // end of code segment for case 7
                         // Case 8: solve for acceleration and final velocity
@@ -569,6 +583,7 @@ public class DataInput extends AppCompatActivity {
                                     a = 0.0;  // a can be anything
                                     vel = v0;
                                     Case = 15;
+                                    FlurryAgent.logEvent("Case 8.a");
                                 } else {
                                     error = "The given values imply infinite acceleration, since there was a displacement in zero time." +
                                             "Change the value of time to be nonzero, or make displacement zero.";
@@ -577,6 +592,7 @@ public class DataInput extends AppCompatActivity {
                                 a = (2 * (dx - v0 * dt))/(dt * dt);
                                 vel = v0 + a * dt;
                                 Case = 16;
+                                FlurryAgent.logEvent("Case 8.c");
                             }
                         }
                         // end of code segment for case 8
@@ -596,6 +612,7 @@ public class DataInput extends AppCompatActivity {
                                 v0 = 1.0 / dt * (dx - 0.5 * a * dt * dt);
                                 vel = v0 + a * dt;
                                 Case = 17;
+                                FlurryAgent.logEvent("Case 9.c");
                             }
                         }
                         // end of code segment for case 9
@@ -607,6 +624,7 @@ public class DataInput extends AppCompatActivity {
                                     a = 0.0; // a can be anything
                                     v0 = vel;
                                     Case = 18;
+                                    FlurryAgent.logEvent("Case 10.a");
                                     //error = "Initial velocity and acceleration cannot be found if time and displacement are equal to zero.";
                                 } else {
                                     error = "The given values imply infinite acceleration, since there was a displacement in zero time." +
@@ -616,6 +634,7 @@ public class DataInput extends AppCompatActivity {
                                 a = 2.0 / (dt * dt) * (vel * dt - dx);
                                 v0 = vel - a * dt;
                                 Case = 19;
+                                FlurryAgent.logEvent("Case 10.c");
                             }
                         }
                         // end of code segment for case 10
@@ -624,7 +643,7 @@ public class DataInput extends AppCompatActivity {
                             error = "Invalid case specified.";
                             //FlurryAgent.logEvent("Error: Invalid Case");
                         }
-                        // END BINDER ALGORITHM
+                        // END BINDER ALGORITHM *************************************************************************************************************************
                     }
                     // this else condition is met if an invalid number of variables are trying to be solved
                     else
