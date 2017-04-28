@@ -114,7 +114,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:adjustViewBounds="false"
-        android:background="white"
+        android:backgroundTint="#FFFFFF"
         android:contentDescription="@string/help_button"
         android:cropToPadding="false"
         android:elevation="0dp"
