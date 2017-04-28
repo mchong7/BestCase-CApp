@@ -11,45 +11,38 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="bestcase.capp.DataInput">
 
-    <ImageView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/title_text" />
-
     <EditText
         android:id="@+id/initial_vel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:layout_alignStart="@+id/final_vel"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:textSize="40sp"
         android:ems="10"
         android:hint="@string/initial_velocity"
         android:inputType="numberSigned|numberDecimal"
         android:nextFocusDown="@+id/final_vel"
         android:textAlignment="center"
-        android:background="@layout/edit_text_style"/>
+        android:background="@layout/edit_text_style"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"/>
 
     <EditText
         android:id="@+id/final_vel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/initial_vel"
-        android:layout_alignStart="@+id/accel"
+        android:textSize="40sp"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:ems="10"
         android:hint="@string/final_velocity"
         android:inputType="numberSigned|numberDecimal"
         android:textAlignment="center"
-        android:background="@layout/edit_text_style"/>
+        android:background="@layout/edit_text_style"
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/accel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:ems="10"
@@ -57,63 +50,84 @@
         android:inputType="numberSigned|numberDecimal"
         android:textAlignment="center"
         android:layout_below="@id/final_vel"
-        android:layout_alignStart="@+id/time"
-        android:background="@layout/edit_text_style"/>
+        android:textSize="40sp"
+        android:background="@layout/edit_text_style"
+        android:layout_marginTop="10dp"
+ />
 
     <EditText
         android:id="@+id/time"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:ems="10"
+        android:textSize="40sp"
         android:hint="@string/time"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         android:layout_below="@id/accel"
-        android:layout_alignStart="@+id/displace"
-        android:background="@layout/edit_text_style"/>
+        android:layout_marginTop="10dp"
+        android:background="@layout/edit_text_style"
+ />
 
     <EditText
         android:id="@+id/displace"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textSize="40sp"
         android:hint="@string/displacement"
         android:inputType="numberSigned|numberDecimal"
         android:textAlignment="center"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_below="@+id/time"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:background="@layout/edit_text_style"/>
 
     <Button
         android:id="@+id/solve_button"
+        android:text="Solve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/solve"
         android:layout_below="@+id/displace"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/colorPrimary"/>
+        android:textSize="40sp"
+
+
+         />
 
     <Button
         android:id="@+id/clear_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clear"
-        android:layout_marginBottom="43dp"
-        android:layout_above="@+id/imageButton"
-        android:backgroundTint="@color/colorAccent"
-        android:layout_alignStart="@+id/solve_button" />
+        android:textSize="40sp"
+        android:layout_below="@+id/solve_button"
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        style="@android:style/Widget.Material.ImageButton"
+        style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="0dp"
-        android:contentDescription="@string/help_button"
-        app:srcCompat="@android:drawable/ic_menu_help"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:adjustViewBounds="false"
+        android:background="white"
+        android:contentDescription="@string/help_button"
+        android:cropToPadding="false"
+        android:elevation="0dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/help" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/title_text"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"/>
 
 </RelativeLayout>
