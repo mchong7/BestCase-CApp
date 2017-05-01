@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@drawable/newback"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -53,7 +53,7 @@
         android:textSize="40sp"
         android:background="@layout/edit_text_style"
         android:layout_marginTop="10dp"
- />
+        />
 
     <EditText
         android:id="@+id/time"
@@ -68,7 +68,7 @@
         android:layout_below="@id/accel"
         android:layout_marginTop="10dp"
         android:background="@layout/edit_text_style"
- />
+        />
 
     <EditText
         android:id="@+id/displace"
@@ -92,17 +92,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/displace"
         android:layout_centerHorizontal="true"
-        android:textSize="40sp"
+        android:textSize="70sp"
+        android:fontFamily="monospace"
 
-
-         />
+        />
 
     <Button
         android:id="@+id/clear_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clear"
-        android:textSize="40sp"
+        android:textSize="70sp"
+        android:fontFamily="monospace"
         android:layout_below="@+id/solve_button"
         android:layout_centerHorizontal="true" />
 
@@ -114,7 +115,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:adjustViewBounds="false"
-        android:backgroundTint="#FFFFFF"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/help_button"
         android:cropToPadding="false"
         android:elevation="0dp"

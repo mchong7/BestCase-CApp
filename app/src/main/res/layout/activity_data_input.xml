@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@drawable/newback"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -18,20 +18,22 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        app:srcCompat="@drawable/title_text" />
+        app:srcCompat="@drawable/title_text"
+        android:contentDescription="" />
 
     <EditText
         android:id="@+id/initial_vel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
-        android:layout_alignStart="@+id/final_vel"
+        android:layout_alignStart="@+id/title"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:ems="10"
         android:hint="@string/initial_velocity"
         android:inputType="numberSigned|numberDecimal"
         android:nextFocusDown="@+id/final_vel"
         android:textAlignment="center"
+        android:textSize="30sp"
         android:background="@layout/edit_text_style"/>
 
     <EditText
@@ -39,11 +41,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/initial_vel"
-        android:layout_alignStart="@+id/accel"
+        android:layout_alignStart="@+id/initial_vel"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:ems="10"
         android:hint="@string/final_velocity"
         android:inputType="numberSigned|numberDecimal"
+        android:textSize="30sp"
         android:textAlignment="center"
         android:background="@layout/edit_text_style"/>
 
@@ -57,7 +60,8 @@
         android:inputType="numberSigned|numberDecimal"
         android:textAlignment="center"
         android:layout_below="@id/final_vel"
-        android:layout_alignStart="@+id/time"
+        android:layout_alignStart="@+id/title"
+        android:textSize="30sp"
         android:background="@layout/edit_text_style"/>
 
     <EditText
@@ -70,7 +74,8 @@
         android:inputType="numberDecimal"
         android:textAlignment="center"
         android:layout_below="@id/accel"
-        android:layout_alignStart="@+id/displace"
+        android:layout_alignStart="@+id/title"
+        android:textSize="30sp"
         android:background="@layout/edit_text_style"/>
 
     <EditText
@@ -84,6 +89,7 @@
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_below="@+id/time"
         android:layout_centerHorizontal="true"
+        android:textSize="30sp"
         android:background="@layout/edit_text_style"/>
 
     <Button
@@ -92,18 +98,17 @@
         android:layout_height="wrap_content"
         android:text="@string/solve"
         android:layout_below="@+id/displace"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/colorPrimary"/>
+
+        />
 
     <Button
         android:id="@+id/clear_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clear"
-        android:layout_marginBottom="43dp"
-        android:layout_above="@+id/imageButton"
-        android:backgroundTint="@color/colorAccent"
-        android:layout_alignStart="@+id/solve_button" />
+
+        android:layout_below="@+id/displace"
+        android:layout_toRightOf="@+id/solve_button" />
 
     <ImageButton
         android:id="@+id/imageButton"
