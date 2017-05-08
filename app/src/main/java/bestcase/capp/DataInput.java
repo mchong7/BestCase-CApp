@@ -417,7 +417,7 @@ public class DataInput extends AppCompatActivity {
                             dx = disp;
                             Case = 10;
                         }
-                        // BEGIN BINDER ALGORITHM
+                        // BEGIN BINDER ALGORITHM ***********************************************************************************************************************
                         // Case 1: solve for final velocity and time
                         // Final velocity squared and time squared are also solved
                         if (Case == 1) {
