@@ -35,10 +35,6 @@ public class About extends AppCompatActivity {
                 Intent instructions = new Intent(About.this, MenuInstructions.class);
                 startActivity(instructions);
                 break;
-            case R.id.menu_settings:
-                Intent settings = new Intent(About.this, Settings.class);
-                startActivity(settings);
-                break;
             default:
                 return super.onOptionsItemSelected(item);
         }

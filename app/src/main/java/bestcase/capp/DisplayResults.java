@@ -41,10 +41,6 @@ public class DisplayResults extends AppCompatActivity {
                 Intent instructions = new Intent(DisplayResults.this, MenuInstructions.class);
                 startActivity(instructions);
                 break;
-            case R.id.menu_settings:
-                Intent settings = new Intent(DisplayResults.this, Settings.class);
-                startActivity(settings);
-                break;
             default:
                 return super.onOptionsItemSelected(item);
         }

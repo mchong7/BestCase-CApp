@@ -63,10 +63,6 @@ public class DataInput extends AppCompatActivity {
                 Intent instructions = new Intent(DataInput.this, MenuInstructions.class);
                 startActivity(instructions);
                 break;
-            case R.id.menu_settings:
-                Intent settings = new Intent(DataInput.this, Settings.class);
-                startActivity(settings);
-                break;
             default:
                 return super.onOptionsItemSelected(item);
         }

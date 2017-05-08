@@ -24,7 +24,7 @@
        android:fontFamily="sans-serif"
        android:text="@string/results"
        android:textAlignment="center"
-       android:textAppearance="@android:style/TextAppearance.Material.Large" />
+       android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
  <TextView
        android:id="@+id/velocity_0_num"
        android:layout_width="match_parent"

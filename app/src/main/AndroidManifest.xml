@@ -63,11 +63,6 @@
             android:parentActivityName=".DataInput"
             android:screenOrientation="portrait" />
 
-        <activity
-            android:name=".Settings"
-            android:parentActivityName=".DataInput"
-            android:screenOrientation="portrait" />
-
         <!--<activity
             android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|

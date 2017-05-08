@@ -19,9 +19,9 @@
         android:layout_gravity="center_horizontal|top"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
-        android:text="About"
+        android:text="@string/about"
         android:textAlignment="center"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -32,7 +32,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/about_title"
         android:layout_marginTop="20dp"
-        android:text="sdasda"
+        android:text="@string/about_text"
         android:textSize="15sp"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
