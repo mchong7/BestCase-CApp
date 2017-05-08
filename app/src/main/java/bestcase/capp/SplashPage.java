@@ -6,10 +6,13 @@ package bestcase.capp;
 
 // import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.widget.CheckBox;
 
 import bestcase.capp.WelcomeActivity;
 
@@ -29,16 +32,21 @@ public class SplashPage extends DataInput{
         Thread timerThread = new Thread(){
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
+
                     Intent intent = new Intent(SplashPage.this, bestcase.capp.WelcomeActivity.class);
                     startActivity(intent);
                 }
             }
         };
         timerThread.start();
+
+
+        //CheckBox show = (CheckBox) findViewById(R.id.show_again);
+
 
     /**
 
@@ -72,5 +80,7 @@ public class SplashPage extends DataInput{
         super.onPause();
         finish();
     }
+
+
 }
 

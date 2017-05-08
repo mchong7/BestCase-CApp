@@ -5,8 +5,8 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:background="@drawable/welcome"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/welcome"
     tools:context="bestcase.capp.Instructions">
 
     <Button
@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/get_started"
+        android:textSize="30sp"
         tools:layout_editor_absoluteX="232dp"
         tools:layout_editor_absoluteY="447dp"
         android:layout_alignParentBottom="true"
@@ -25,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/instructions"
+        android:textSize="50sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -35,11 +37,12 @@
         android:layout_height="wrap_content"
         android:text="@string/instruct"
         android:scrollbars="vertical"
+        android:textSize="30sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="72dp"
         android:layout_below="@+id/top"
         android:layout_alignParentStart="true"
         android:layout_marginTop="17dp"
-        android:layout_marginBottom="40dp"/>
+        android:layout_above="@+id/doit"/>
 </RelativeLayout>

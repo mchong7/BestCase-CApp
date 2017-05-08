@@ -23,12 +23,17 @@
         android:id="@+id/dothis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/welcome_text"
-        android:textSize="40sp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:text="@string/welcome"
+        android:textSize="30sp"
 
+        android:scrollbars="vertical"
+        android:layout_above="@+id/show_again"
         android:layout_below="@+id/welcome"
+        android:layout_marginBottom="20dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="72dp"
         android:layout_alignParentStart="true" />
 
     <Button
@@ -51,5 +56,15 @@
         android:layout_alignTop="@+id/instructions"
         android:text="@string/get_started"
         android:textSize="30sp"/>
+
+    <CheckBox
+        android:id="@+id/show_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textSize="35sp"
+        android:text="Do not show this message again"
+        android:layout_above="@+id/instructions"
+        android:layout_alignStart="@+id/instructions" />
 
 </RelativeLayout>

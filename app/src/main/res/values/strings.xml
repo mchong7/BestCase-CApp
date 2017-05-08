@@ -18,9 +18,8 @@
     <string name="get_started">Get Started</string>
     <string name="welcome">Welcome</string>
     <string name="help_button">Tells the user how to use the data input page</string>
-    <string name="welcome_text">Press Get Started to start calculating physics equations,
-        or press the instructions button to learn how to use the app.\n\n You can always access
-        the instructions later in the app from the app bar on the top right.</string>
+    <string name="welcome_text">Welcome</string>
+
     <string-array name="spinner1">
                
         <item>Mercury</item>

@@ -13,17 +13,27 @@
     tools:context="bestcase.capp.DataInput">
 
     <TextView
-        android:id="@+id/results"
+        android:id="@+id/about_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|top"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
-        android:text="@string/settings"
+        android:text="About"
         android:textAlignment="center"
-        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/about_title"
+        android:layout_marginTop="20dp"
+        android:text="sdasda"
+        android:textSize="30sp"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
 
 </RelativeLayout>
