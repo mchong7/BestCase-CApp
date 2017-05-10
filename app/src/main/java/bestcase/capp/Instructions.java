@@ -55,8 +55,8 @@ public class Instructions extends AppCompatActivity {
                 + "<em><b>Time (t)</em></b><br><br>" +
                 "Time is relatively self-explanatory. In this app, time is generally measured in seconds, but depending on your problem, it can be minutes, hours, years, or anything else." +
                 "<br><br>Measuring elapsed time is useful because events occur in a period of time. In order to measure these events, the time itself must also be measured." +
-                "<br><br>For instance, if an object is moving at 5 meters per second with an acceleration of 1 meter per second, it is impossible to know how far the object travelled" +
-                "without knowing how much time the object travelled for. It can be very difficult to gather data without measuring time, and it is advised to take caution" +
+                "<br><br>For instance, if an object is moving at 5 meters per second with an acceleration of 1 meter per second, it is impossible to know how far the object traveled" +
+                "without knowing how much time the object traveled for. It can be very difficult to gather data without measuring time, and it is advised to take caution" +
                 "when solving for problems that have zero elapsed time.<br><br>"
                 + "<em><b>Displacement (\u0394x)</em></b><br><br>" +
                 "Displacement is a way of measuring the movement of an object over a period of time. (If no time has elapsed, an object cannot move.) " +
